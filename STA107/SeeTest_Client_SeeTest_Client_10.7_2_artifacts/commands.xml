@@ -1,0 +1,2523 @@
+<commands>
+<heading name="Object" />
+	<command name="Click(Zone, Element, Index, ClickCount)" appiumName="FindElement and Click(Element)" appium="true" method="click" version="3" domain="object" driverDomain="object" web="true" load="true" manual="true">
+		<commandString>Click on {0}:{1}</commandString>
+		<appiumCommandString>FindElement By {0} and Click</appiumCommandString>
+		<description>Click on an element</description>
+		<documentation>
+			Click an element.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of Clicks" defaultValue="1" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>Click</doc>
+	</command>
+	<command name="ForceTouch(Zone, Element, Index, Duration, Force, DragDistanceX, DragDistanceY, DragDuration)" method="forceTouch" version="3" scriptMethod="forceTouch" domain="object" driverDomain="object" web="true" load="false" manual="true" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>ForceTouch on {0}:{1} with force of:{4} percent and drag to offset({5},{6})</commandString>
+		<description>Force touch on element and drag for distance.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Duration" type="integer" description="Duration" defaultValue="100" pattern="(\d+)" />
+			<parameter name="Force" type="integer" description="Force level in percent" defaultValue="100" pattern="(\d+)" />
+			<parameter name="DragDistanceX" type="integer" description="Horizontal distance of drag from Element" defaultValue="0" pattern="(-?(\d+))" />
+			<parameter name="DragDistanceY" type="integer" description="Vertical distance of drag from Element" defaultValue="0" pattern="(-?(\d+))" />
+			<parameter name="DragDuration" type="integer" description="Drag Duration" defaultValue="1500"  pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ForceTouch</doc>
+	</command>
+
+
+	<command name="TouchDown(Zone, Element, Index)" method="touchDown" version="3" scriptMethod="touchDown" domain="object" driverDomain="object" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>TouchDown on {0}:{1} with index {2}</commandString>
+		<description>Touch down on element.</description>
+		<documentation>
+			Hold Touch down on element, Release with TouchUp command.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>TouchDown</doc>
+	</command>
+
+	<command name="TouchDownCoordinate(X, Y)" method="touchDownCoordinate" version="3" domain="device" driverDomain="device" load="false" manual="false" includeInUI="true">
+		<commandString>Touch down at x: {0}, y: {1}</commandString>
+		<description>Touch down at X,Y coordinates</description>
+		<documentation>
+			Hold Touch down at X,Y coordinates related to the device screen, Release with TouchUp command.
+		</documentation>
+		<parameters>
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>TouchDownCoordinate</doc>
+	</command>
+
+	<command name="TouchMove(Zone, Element, Index)" method="touchMove" version="3" scriptMethod="touchMove" domain="object" driverDomain="object" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Touch move to element {0}:{1} with index {2}</commandString>
+		<description>TouchMove to element.</description>
+		<documentation>
+			Move from last Touched down element/coordinate to specified element location.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>TouchMove</doc>
+	</command>
+
+
+	<command name="TouchMoveCoordinate(X, Y)" method="touchMoveCoordinate" scriptMethod="touchMoveCoordinate" version="3" domain="device" driverDomain="device" load="false" manual="false" includeInUI="true">
+		<commandString>Touch move to coordinates x: {0}, y: {1}</commandString>
+		<description>TouchMove to X,Y coordinates</description>
+		<documentation>
+			Move from last Touched down element/coordinate to specified coordinate location.
+		</documentation>
+		<parameters>
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>TouchMoveCoordinate</doc>
+	</command>
+
+	<command name="TouchUp()" method="touchUp" version="3" scriptMethod="touchUp" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Touch up</commandString>
+		<description>Touch Up from last coordinate touched down or moved to.</description>
+		<parameters>
+		</parameters>
+		<return>void</return>
+		<doc>TouchUp</doc>
+	</command>
+
+	<command name="StartMultiGestureStep(MutliGestureName)" method="startMultiGesture" version="3" scriptMethod="startMultiGesture" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Start multi-touch gesture steps</commandString>
+		<description>Start a group of multi-touch gesture steps.
+Note: all steps will be performed only when executing the PerformMultiGestureStep command.
+See online documentation for details</description>
+		<parameters>
+			<parameter name="Name" type="string" description="Gesture name" defaultValue="" />
+		</parameters>
+		<return>void</return>
+		<doc>StartMultiGestureStep</doc>
+	</command>
+
+	<command name="PerformMultiGestureStep()" method="performMultiGesture" version="3" scriptMethod="performMultiGesture" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Perform multi-touch gesture</commandString>
+		<description>Perform the multi-touch gesture steps which were added after the last StartMultiGestureStep command</description>
+		<parameters>
+		</parameters>
+		<return>void</return>
+		<doc>PerformMultiGestureStep</doc>
+	</command>
+
+	<command name="MultiTouchDown(Zone, Element, Index, FingerIndex)" method="multiTouchDown" version="3" scriptMethod="multiTouchDown" domain="object" driverDomain="object" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Gesture-touch down with finger {3} on element {0}:{1}</commandString>
+		<description>Hold a finger Touched down on an element. Release with MultiTouchUp command.
+Note: element will be identified right before performing the gesture</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiTouchDown</doc>
+	</command>
+
+	<command name="MultiTouchDownCoordinate(X, Y, FingerIndex)" method="multiTouchDownCoordinate" version="3" scriptMethod="multiTouchDownCoordinate" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<commandString>Gesture-touch down with finger {2} on x: {0}, y: {1}</commandString>
+		<description>Hold a finger Touched down on a given coordinate</description>
+		<parameters>
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiTouchDownCoordinate</doc>
+	</command>
+
+	<command name="MultiTouchMove(Zone, Element, Index, FingerIndex)" method="multiTouchMove" version="3" scriptMethod="multiTouchMove" domain="object" driverDomain="object" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Gesture-move finger {3} to element {0}:{1}</commandString>
+		<description>Gesture-move a finger to the element, from the last coordinate touched down or moved to.
+Note: element will be identified right before performing the gesutre</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiTouchDown</doc>
+	</command>
+
+	<command name="MultiTouchMoveCoordinate(X, Y, FingerIndex)" method="multiTouchMoveCoordinate" version="3" scriptMethod="multiTouchMoveCoordinate" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<commandString>Gesture-move finger {2} to x: {0}, y: {1}</commandString>
+		<description>Move a finger to the given coordinate, from the last coordinate touched down or moved to.</description>
+		<parameters>
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiTouchMoveCoordinate</doc>
+	</command>
+
+	<command name="MultiTouchUp(FingerIndex)" method="multiTouchUp" version="3" scriptMethod="multiTouchUp" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<commandString>Gesture-touch up with finger {0}</commandString>
+		<description>Touch up with a finger, from the last coordinate touched down or moved to</description>
+		<parameters>
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiTouchUp</doc>
+	</command>
+
+	<command name="MultiClick(Zone, Element, Index, FingerIndex)" method="multiClick" version="3" scriptMethod="multiClick" domain="object" driverDomain="object" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Gesture-click with finger {3} on element {0}:{1}</commandString>
+		<description>Click on an element with a finger.
+Note: element will be identified right before performing the gesutre</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiClick</doc>
+	</command>
+
+	<command name="MultiClickOffset(Zone, Element, Index, x, y, FingerIndex)" method="multiClickOffset" version="3" scriptMethod="multiClickOffset" domain="object" driverDomain="object" web="true" load="false" manual="false" includeInUI="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Gesture-click with finger {5} at offset x: {3}, y: {4} from element {0}:{1}</commandString>
+		<description>Click with a finger near an element, in given offset form the element.
+Note: element will be identified right before performing the gesutre</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="" pattern="((\d|-)+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="" pattern="((\d|-)+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiClickOffset</doc>
+	</command>
+
+	<command name="MultiClickCoordinate(x, y, FingerIndex)" method="multiClickCoordinate" version="3" scriptMethod="multiClickCoordinate" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<commandString>Gesture-click with finger {2} on x: {0}, y: {1}</commandString>
+		<description>Click with a finger on given coordinate</description>
+		<parameters>
+			<parameter name="x" type="integer" description="Horizontal coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="y" type="integer" description="Vertical coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiClickCoordinate</doc>
+	</command>
+
+	<command name="MultiSwipe(Direction, Offset, Time, FingerIndex)" method="multiSwipe" version="3" scriptMethod="multiSwipe" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<commandString>Gesture-swipe the screen {0} with finger {3} for {2}ms</commandString>
+		<description>Swipe the screen in a given direction</description>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Swipe direction" defaultValue="" pattern="(.+)" />
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="" pattern="((\d|-)+)" />
+			<parameter name="Time" type="integer" description="Swipe overall time" defaultValue="500" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiSwipe</doc>
+	</command>
+
+	<command name="MultiWait(Time, FingerIndex)" method="multiWait" version="3" scriptMethod="multiWait" domain="device" driverDomain="device" web="true" load="false" manual="false" includeInUI="true">
+		<commandString>Gesture-wait with finger {1} for {0}ms</commandString>
+		<description>Wait with a finger in the last touch point, for the given time</description>
+		<parameters>
+			<parameter name="Time" type="integer" description="Wait time" defaultValue="500" pattern="(\d+)" />
+			<parameter name="FingerIndex" type="integer" description="Finger index" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>MultiWait</doc>
+	</command>
+
+	<command name="ElementSendText(Zone, Element, Index, Text)" appiumName="FindElement and SendKeys(Element, Text)" appium="true" method="elementSendText" version="3" domain="object" driverDomain="object" web="true" load="true" manual="true">
+		<commandString>Send Text {3} to element {0}:{1}</commandString>
+		<appiumCommandString>FindElement By {0} and Send {1}</appiumCommandString>
+		<description>Send text to an element</description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Text" type="string" manualValue="true" description="Text to Send" defaultValue="" pattern="(.*)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>ElementSendText</doc>
+	</command>
+	<command name="ElementListSelect(ListLocator, ElementLocator, Index, Click)" method="elementListSelect" appiumName="FindList and Select Element(ListLocator, ElementLocator, Click)" appium="true" version="3" domain="device" driverDomain="device" load="true" manual="true">
+		<commandString>Select element {1} in list {0}</commandString>
+		<appiumCommandString>Select element {1} in list {0}</appiumCommandString>
+		<description>Select an element in a list (first make the element visible)</description>
+		<parameters>
+			<parameter name="ListLocator" type="string" description="List locator" defaultValue="" pattern="(.*)" appium="true"/>
+			<parameter name="ElementLocator" type="string" description="Element locator" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click" type="bool" description="If TRUE then click" defaultValue="true" pattern="(true|false)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>ElementListSelect</doc>
+	</command>
+	<command name="VerifyElementFound(Zone, Element, Index)" appiumName="FindElement(Element)" appium="true" method="verifyElementFound" version="3" domain="object" driverDomain="object" web="true" throwsOnFail="true" load="true" manual="true">
+		<commandString>Verify the element {0}:{1} is found index {2}</commandString>
+		<appiumCommandString>FindElement By {0}</appiumCommandString>
+		<description>Verify an element is found</description>
+		<documentation>
+			Check if an element is found in a specified zone.
+			An Exception (or Assertion) will be thrown if the element is not found.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element Order (=the number of times the element appears more and above the first time)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>VerifyElementFound</doc>
+	</command>
+	<command name="VerifyElementNotFound(Zone, Element, Index)" method="verifyElementNotFound" version="3" domain="object" driverDomain="object" web="true" throwsOnFail="true" load="true">
+		<commandString>Verify the element {0}:{1} is not found</commandString>
+		<description>Verify an element is not found</description>
+		<documentation>
+			Check if an element is found in a specified zone.
+			An Exception (or Assertion) will be thrown if the element is found.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue=""  pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order (=the number of times the element appears more and above the first time)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>VerifyElementNotFound</doc>
+	</command>
+	<command name="pingServer" method="pingServer" version="3"  domain="utils" includeInUI="false" throwsOnFail="true" requireAgent="false" autoGenerated="false">
+		<commandString>ping Server</commandString>
+		<description>ping Server</description>
+		<documentation>
+			ping Server.
+		</documentation>
+		<return>void</return>
+	</command>
+	<command name="WaitForElement(Zone, Element, Index, Timeout)" appiumName="WaitForElementPresence(Element, Timeout)" method="waitForElement" version="3" domain="object" driverDomain="object" web="true" retKey="found" load="true" manual="true" appium="true">
+		<commandString>Wait for {0}:{1} index {2} timeout: {3} ms</commandString>
+		<appiumCommandString>Wait for Element Presence</appiumCommandString>
+		<description>Wait for an element to appear in a specified zone</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element to Wait For" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" appium="true"/>
+		</parameters>
+		<return>bool</return>
+		<doc>WaitForElement</doc>
+	</command>
+	<command name="WaitForElementToVanish(Zone, Element, Index, Timeout)" method="waitForElementToVanish" version="3" domain="object" driverDomain="object" web="true" retKey="found" load="true" manual="true">
+		<commandString>Wait for {0}:{1} index {2} to vanish timeout: {3} ms</commandString>
+		<description>Wait for an element to vanish</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element to Wait For" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+		<doc>WaitForElementToVanish</doc>
+	</command>
+	<command name="ElementGetProperty(Zone, Element, Index, Property)" appium="true" appiumName="FindElement and GetAttribute(Element, Property)" method="elementGetProperty" version="3" domain="object" driverDomain="object" web="true" retKey="text" load="true">
+		<commandString>Get {3} from element {0}:{1}</commandString>
+		<appiumCommandString>FindElement By {0} and Get Attribute {1}</appiumCommandString>
+		<description>Get element property</description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" appium="true" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Property" type="property_get" description="Property" defaultValue="" pattern="(.+)" appium="true" />
+		</parameters>
+		<return>string</return>
+		<doc>ElementGetProperty</doc>
+	</command>
+	<command name="ElementSetProperty(Zone, Element, Index, Property, Value)" method="elementSetProperty" version="3" domain="object" driverDomain="object" web="true" retKey="text" load="true" manual="true">
+		<commandString>Set {3}={4} from element {0}:{1}
+		</commandString>
+		<description>Set element property</description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Property" type="property_set" description="Property" defaultValue="" pattern="(.+)" />
+			<parameter name="Value" type="string" manualValue="true" description="The value to set" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>string</return>
+		<doc>ElementSetProperty</doc>
+	</command>
+
+	<command name="SetPickerValues(zoneName, elementName, index, wheelIndex, value)" method="setPickerValues" version="3" domain="object" driverDomain="object" web="true" retKey="text" load="false" manual="false">
+		<commandString>Set the Wheel {3} of picker element: {1} to {4}</commandString>
+		<description>Set the values of the Picker element</description>
+		<parameters>
+			<parameter name="zoneName" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="elementName" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="wheelIndex" type="integer" description="Wheel Index" defaultValue="" pattern="(.+)" />
+			<parameter name="value" type="string" manualValue="true" description="The value to set" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>string</return>
+		<doc>SetPickerValues</doc>
+	</command>
+
+	<command name="ElementSwipe(Zone, Element, Index, Direction, Offset, Time)" appiumName="FindElement and Swipe(Element, Direction, Time)" appium="true" method="elementSwipe" version="3" domain="object" driverDomain="object" web="true" load="true">
+		<commandString>Element swipe {1} direction: {3}</commandString>
+		<appiumCommandString>FindElement By {0} and Swipe {1}</appiumCommandString>
+		<description>Swipe the screen in a given direction</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="0" pattern="((\d|-)+)" />
+			<parameter name="Time" type="integer" description="Swipe overall time" defaultValue="2000" pattern="(\d+)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>ElementSwipe</doc>
+	</command>
+
+	<command name="GetAllValues(Zone, Element, Property)" method="getAllValues" version="3" domain="object" driverDomain="object" retKey="textArray" web="true">
+		<commandString>Get all {2} property from elements {0}:{1}
+		</commandString>
+		<description>Get all the values of a property in a given element. Note: Supported properties are available on Object spy. </description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Property" type="string" description="Property" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>string_array</return>
+		<doc>GetAllValues</doc>
+	</command>
+
+	<command name="GetNVProfiles()" method="getNVProfiles" version="3" domain="object" driverDomain="object" retKey="textArray" includeInUI="false">
+		<commandString>Get all Network Virtualization profiles.</commandString>
+		<description>Get all Network Virtualization profiles.</description>
+		<return>string_array</return>
+		<doc>GetNVProfiles</doc>
+	</command>
+
+	<command name="GetPickerValues(Zone, PickerElement, Index, WheelIndex)" method="getPickerValues" version="3" domain="object" driverDomain="object" retKey="textArray" web="false">
+		<commandString>Get all values from picker {1}:{2} at wheel number {3}
+		</commandString>
+		<description>Get all values from picker, works only on iOS</description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="PickerElement" type="element" description="Select Picker Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Picker index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="WheelIndex" type="integer" description="Wheel index at picker component" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>string_array</return>
+		<doc>GetPickerValues</doc>
+	</command>
+
+	<command name="RunNativeAPICall(Zone, Element, Index, Script)" method="runNativeAPICall" version="3" domain="object" driverDomain="object" retKey="text">
+		<commandString>Run native API call on {0}:{1}, script: {3}
+		</commandString>
+		<description>Run native API call on the given element. </description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone (should be NATIVE)" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element (should use xpath)" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Script" type="string" description="Script to execute" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>string</return>
+	</command>
+	<command name="FindElements" method="findElements" version="3" domain="object" driverDomain="object" retKey="textArray" includeInUI="false">
+		<parameters>
+			<parameter name="zone" type="string" description="zone of the element (NATIVE / WEB)"/>
+			<parameter name="parent" type="string" description="full xpath of parent (empty string / return of previous call)"/>
+			<parameter name="by" type="string" description="currently only xpath supported"/>
+			<parameter name="value" type="string" description="full xpath of the element to search"/>
+		</parameters>
+		<return>string_array</return>
+	</command>
+	<command name="IsElementFound(Zone, Element, Index)" method="isElementFound" version="3" domain="object" driverDomain="object" web="true" retKey="found" load="true">
+		<commandString>Check if {1} ({0}) is found</commandString>
+		<description>Check if a given element is found in the specified zone; if found returns TRUE if not found returns FALSE</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Element to find" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+		<doc>IsElementFound</doc>
+	</command>
+
+
+
+<heading name="Application" />
+	<command name="Install(appPath,instrument,keepData)" appiumName="InstallApp(path)" appium="true" method="install" version="2" domain="device" driverDomain="app" retKey="found" scriptMethod="install2" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Install {0}</commandString>
+		<appiumCommandString>InstallApp {0}</appiumCommandString>
+		<description>Install the application in the given path on the device</description>
+		<parameters>
+			<parameter name="Path" type="install" description="can be an APK/IPA etc. absolute path or an activity name from the application manager." defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Instrument" type="bool" description="If set to TRUE will sign the application (if not already instrumented)" defaultValue="true" pattern="(true|false)" />
+			<parameter name="Keep Data" type="bool" description="If set to TRUE will keep application data" defaultValue="false" pattern="(true|false)" />
+		</parameters>
+		<return description="installation success">bool</return>
+		<doc>Install</doc>
+	</command>
+	<command name="Uninstall(app)" appiumName="RemoveApp(app)" appium="true" method="uninstall" version="3" domain="device" driverDomain="app" retKey="found">
+		<commandString>Uninstall {0}</commandString>
+		<appiumCommandString>RemoveApp {0}</appiumCommandString>
+		<description>Uninstall the application</description>
+		<parameters>
+			<parameter name="Application" type="uninstall" description="The application name" defaultValue="" pattern="(.+)" appium="true"/>
+		</parameters>
+		<return description="uninstallation success">bool</return>
+		<doc>Uninstall</doc>
+	</command>
+	<command name="Launch(activity, instrument, stopIfRunning)" appiumName="Launch(app)" method="launch" version="3" domain="device" driverDomain="app" load="true"  manual="true" appium="true">
+		<commandString>Launch activity {0}</commandString>
+		<appiumCommandString>Launch {0}</appiumCommandString>
+		<description>Launch activity</description>
+		<parameters>
+			<parameter name="Activity/URL" type="launch" description="The application main activity or URL" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Instrument" type="bool" description="If set to true then will launch in instrument mode" defaultValue="true" pattern="(true|false)" />
+			<parameter name="Stop If Running" type="bool" description="If set to true then will stop the running process before launching it" defaultValue="false" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+		<doc>Launch</doc>
+	</command>
+	<command name="Launch(appIdentifier, launchOptions)" method="launch" scriptMethod="launch2" includeInUI="false" vugenAutoGenerated="false" version="3" domain="device" driverDomain="app">
+		<commandString>Launch application {0}</commandString>
+		<description>
+			Launch application by identifier (bundleID / package and activity) and an options map.
+			An empty map denotes default launch behaviour.
+
+			Some of the available options are platform dependent, and some are generic. Currently supported options:
+
+			Generic Options:
+			- "relaunch"     (boolean): whether an existing process of this application should be killed before launching the application.
+			- "instrumented" (boolean): whether the application should be launched in instrumented mode or not.
+
+			iOS Specific Options:
+			- "launch_args"  (list/array)     : this list (of strings) will be appended to the launched application command line.
+			- "launch_env"   (map/dictionary) : a (string to string) key value pairs of environment variables to set for the application.
+
+			Android Specific Options:
+			(No Android Specific Options are implemented yet).
+		</description>
+		<parameters>
+			<parameter name="Application Identifier" type="launch" description="The application's bundle ID / package name" defaultValue="" pattern="(.+)" />
+			<parameter name="Launch Options" type="map" description="A map / dictionary containing launch options" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+		<doc>Launch</doc>
+	</command>
+	<command name="ApplicationClearData(app)" method="applicationClearData" version="3" domain="device" driverDomain="app" load="true">
+		<commandString>Clear application data {0}</commandString>
+		<description>Clear application data</description>
+		<parameters>
+			<parameter name="Package Name" type="clearData" description="The application's package name" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ApplicationClearData</doc>
+	</command>
+	<command name="ApplicationClose(app)" method="applicationClose" version="3" domain="device" driverDomain="app" retKey="found" load="true">
+		<commandString>Close application {0}</commandString>
+		<description>Close application</description>
+		<parameters>
+			<parameter name="Package Name" type="appClose" description="The application's package name" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return description="successful close">bool</return>
+		<doc>ApplicationClose</doc>
+	</command>
+	<command name="ExtractLanguageFiles(app, directoryPath, allowOverwrite)" method="extractLanguageFiles" version="3" domain="device" driverDomain="app" load="true">
+		<commandString>Extract language files from {0} to {1} </commandString>
+		<description>Extracts the language files of an application to the specified directory</description>
+		<parameters>
+			<parameter name="Application" type="launch" description="Language files source application" defaultValue="" pattern="(.+)" />
+			<parameter name="Directory Path" type="string" description="Directory's full path where to extract the language files" defaultValue="" pattern="(.+)" />
+			<parameter name="Allow Overwrite" type="bool" description="Whether to allow overwriting existing langauge files in directory" defaultValue="true" />
+		</parameters>
+		<return>void</return>
+        <doc>ExtractLanguageFiles</doc>
+	</command>
+	<command name="SimulateCapture(picturePath)" method="simulateCapture" version="3" domain="device" driverDomain="app" load="false">
+		<commandString>SimulateCapture {0}</commandString>
+		<description>SimulateCapture</description>
+		<parameters>
+			<parameter name="Picture Path" type="string" description="picture's full path" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SimulateCapture</doc>
+	</command>
+
+<heading name="Device" />
+	<command name="DeviceAction(Action)" method="deviceAction" version="3" domain="device" driverDomain="device" load="true" manual="true" appium="true">
+		<commandString>Device Action: {0}</commandString>
+		<description>
+			Execute a command on the device.
+		</description>
+		<documentation>
+			Execute any of the following device actions:
+			Home, Back, Power, Landscape, Portrait, Change Orientation, Menu, Unlock, Paste, Volume Up, Volume Down, Recent Apps.
+		</documentation>
+		<parameters>
+			<parameter name="Action" type="device_action" manualValue="true" description="Name of action to perform" defaultValue="" pattern="(.+)"/>
+		</parameters>
+	</command>
+	<command name="SetNetworkConnection(Connection,Enable)" method="setNetworkConnection" version="3" domain="device" driverDomain="device" load="true" manual="true">
+		<commandString>Set Network Connection: {0}</commandString>
+		<description>
+			setting the network connection for a device.
+		</description>
+		<documentation>
+			setting the network connection for a device.
+			Execute any of the following connection type:
+			airplane_mode, wifi, mobile_data.
+		</documentation>
+		<parameters>
+			<parameter name="Connection" type="string" manualValue="true" description="Name of connection to set" defaultValue="" pattern="(.+)"/>
+			<parameter name="Enable" type="bool" manualValue="true" description="Status of connection to set" defaultValue="" pattern="(true|false)"/>
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="GetNetworkConnection(Connection)" method="getNetworkConnection" version="3" domain="device" driverDomain="device" load="true" manual="true">
+		<commandString>Get Network Connection: {0}</commandString>
+		<description>
+			getting the network connection for a device.
+		</description>
+		<documentation>
+			getting the network connection for a device.
+			Execute any of the following connection type:
+			airplane_mode, wifi, mobile_data.
+		</documentation>
+		<parameters>
+			<parameter name="Connection" type="string" manualValue="true" description="Name of connection to get status" defaultValue="" pattern="(.+)"/>
+		</parameters>
+		<return>bool</return>
+	</command>
+	<command name="SendText(Text)" method="sendText" appiumName="SendKeys(Text)" appium="true" version="3" domain="device" driverDomain="device" load="true" manual="true" >
+		<commandString>Send {0}</commandString>
+		<appiumCommandString>Send {0}</appiumCommandString>
+		<description>
+			Sends/inserts text to the application. Supports the following keyboard actions as well: {ENTER}, {BKSP}. Device actions can now be found under DeviceAction command.
+		</description>
+		<parameters>
+			<parameter name="Text" type="string" manualValue="true" description="Text to send" defaultValue="" pattern="(.*)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>SendText</doc>
+	</command>
+	<command name="Swipe(Direction, Offset, Time)" appium="true" method="swipe" scriptMethod="swipe2" version="2" domain="device" driverDomain="device" load="true" manual="true" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Swipe {0}</commandString>
+		<description>Swipe the screen in a given direction</description>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe" defaultValue="" pattern="(.+)"/>
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="0" pattern="((\d|-)+)" />
+			<parameter name="Time" type="integer" description="Swipe overall time" defaultValue="500" pattern="(\d+)"/>
+		</parameters>
+		<return>void</return>
+		<doc>Swipe</doc>
+	</command>
+	<command name="Flick(Direction, Offset)" method="flick" version="3" domain="device" driverDomain="device" load="true" manual="true">
+		<commandString>Flick {0} </commandString>
+		<description>Flick the screen in a given direction</description>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to flick" defaultValue="" pattern="(.+)" />
+			<parameter name="Offset" type="integer" description="Flick offset" defaultValue="0" pattern="((\d|-)+)" />
+		</parameters>
+		<return>void</return>
+		<doc>Flick</doc>
+	</command>
+	<command name="CloseKeyboard()" method="closeKeyboard" version="3" domain="device" driverDomain="device" load="true" manual="true" appium="true">
+		<commandString>Close device keyboard</commandString>
+		<description>Close device keyboard</description>
+		<parameters>
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="Reboot(Timeout)" method="reboot" version="3" domain="device" driverDomain="device" retKey="status" manual="true">
+		<commandString>Reboot device</commandString>
+		<description>Will reboot the device</description>
+		<parameters>
+			<parameter name="Timeout" type="integer" description="Timeout waiting for the device to reboot. Minimum value is 40000." defaultValue="120000" pattern="(\d+)" />
+		</parameters>
+		<return description="have device already been rebooted within given timeout">bool</return>
+		<doc>Reboot</doc>
+	</command>
+    <command name="ClearDeviceLog()" method="clearDeviceLog" version="3" domain="device" driverDomain="device">
+        <commandString>Clear device log</commandString>
+        <description>Clear device log</description>
+        <return>void</return>
+    </command>
+	<command name="GetDeviceLog()" method="getDeviceLog" version="3" domain="device" driverDomain="device" retKey="path">
+		<commandString>Get device log of current device</commandString>
+		<description>Download device log to reports directory</description>
+		<parameters>
+		</parameters>
+		<return description="path to the file that was downloaded">string</return>
+	</command>
+	<command name="StartLoggingDevice(logPath)" method="startLoggingDevice" version="3" domain="device" driverDomain="device">
+		<commandString>Start logging device to: {0}</commandString>
+		<description>Start writing the current device's log to file</description>
+		<parameters>
+			<parameter name="Path" type="string" description="Absolute path to log file, or where the log file should be created" defaultValue=""/>
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="StopLoggingDevice()" method="stopLoggingDevice" version="3" domain="device" driverDomain="device" >
+		<commandString>Stop logging device</commandString>
+		<description>Stop writing the current device's log to file</description>
+		<parameters>
+		</parameters>
+		<return>string</return>
+	</command>
+	<command name="SetNetworkConditions(Profile)" method="setNetworkConditions" version="1" domain="device" driverDomain="device" deprecated="true">
+		<commandString>Set network profile to: {0}</commandString>
+		<description>Set profile for current device. To cancel profile leave the profile name empty</description>
+		<parameters>
+			<parameter name="Profile" type="profiles" description="Set the profile to be used" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetNetworkConditions(Profile, Duration)" method="setNetworkConditions" scriptMethod="setNetworkConditions2" version="3" domain="device" driverDomain="device">
+		<commandString>Set network profile to: {0} for a duration of {1} millseconds</commandString>
+		<description>Set profile for current device for a specified duration. To cancel profile leave the profile name empty</description>
+		<parameters>
+			<parameter name="Profile" type="profiles" description="Set the profile to be used" defaultValue="" pattern="(.*)" />
+			<parameter name="Duration" type="integer" description="Set the duration in milliseconds to which to set the profile (0=forever)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetLocation(Latitude, Longitude)" method="setLocation" version="3" domain="device" driverDomain="device">
+		<commandString>Set location {0}, {1}</commandString>
+		<description>Sets device's location to specified coordinate. Currently supported only on android</description>
+		<parameters>
+			<parameter name="Latitude" type="string"
+					 description="Latitude in decimal degrees from -90 to 90. Positive latitudes are north of the equator and negative latitudes are south of the equator."
+					 defaultValue="0.0"/>
+	 		<parameter name="Longitude" type="string"
+					 description="Longitude in decimal degrees from -180 to 180. Positive longitudes are east of the Prime Meridian and negative longitudes are west of the Prime Meridian"
+					 defaultValue="0.0"/>
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="ClearLocation()" method="clearLocation" version="3" domain="device" driverDomain="device">
+		<commandString>Clear Mock Location</commandString>
+		<description>Clears the mock location. Currently supported only on android</description>
+		<return>void</return>
+	</command>
+	<command name="StartAudioPlay(audioFile)" method="startAudioPlay" version="3" domain="device" driverDomain="device">
+		<commandString>Start audio play for: {0}</commandString>
+		<description>Start play audio file</description>
+		<parameters>
+			<parameter name="Audio File" type="string" description="Set the audio file to start playing" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+    <command name="StopAudioPlay()" method="stopAudioPlay" version="3" domain="device" driverDomain="device">
+        <commandString>Stop audio playing</commandString>
+        <description>Stop audio playing</description>
+        <parameters>
+        </parameters>
+        <return>void</return>
+    </command>
+	<command name="WaitForAudioPlayEnd(timeout)" method="waitForAudioPlayEnd" version="3" domain="device" driverDomain="device">
+		<commandString>Wait for audio file play to end, timeout: {0}</commandString>
+		<description>Wait for audio file play to end</description>
+		<parameters>
+			<parameter name="Timeout" type="integer" description="Set the timeout" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="StartAudioRecording(audioFile)" method="startAudioRecording" version="3" domain="device" driverDomain="device">
+		<commandString>Start audio recording to: {0}</commandString>
+		<description>Start record audio file</description>
+		<parameters>
+			<parameter name="Audio File" type="string" description="Set the audio file name" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="StopAudioRecording()" method="stopAudioRecording" version="3" domain="device" driverDomain="device">
+		<commandString>Stop audio recording</commandString>
+		<description>Stop audio recording</description>
+		<parameters>
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetAuthenticationReply(Reply, Delay)" method="setAuthenticationReply" version="3" domain="device" driverDomain="device">
+		<commandString>Set authentication reply to {0} ms</commandString>
+		<description>
+			Set the reply type for later authentication requests.
+See online documentation for details.
+		</description>
+		<parameters>
+			<parameter name="Reply" type="auth_reply" description="The reply type to mock" defaultValue="Success" pattern="(.*)" />
+			<parameter name="Delay" type="integer" description="Delay after request in ms" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+
+<heading name="Web (Hybrid) specific"/>
+	<command name="HybridGetHtml(WebViewLocator, Index)" method="hybridGetHtml" version="3" domain="device" driverDomain="device" retKey="text">
+		<commandString>Hybrid get the HTML content from {0}:{1}</commandString>
+		<description>Get HTML content from a webView element</description>
+		<parameters>
+			<parameter name="WebViewLocator" type="string" description="WebView locator string like id=web or empty for the first WebView in page" defaultValue="" pattern="(.*)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>string</return>
+	</command>
+	<command name="HybridSelect(WebViewLocator, Index, Method, Value, Select)" method="hybridSelect" version="3" domain="device" driverDomain="device">
+		<commandString>Hybrid select {4} in {2}={3}</commandString>
+		<description>Select an option from a select element in a WebView. Using the input method and value to identify the element</description>
+		<parameters>
+			<parameter name="WebViewLocator" type="string" description="WebView locator string like id=web or empty for the first WebView in page" defaultValue="" pattern="(.*)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Method" type="hybridMethod" description="Identification method (css/id)" defaultValue="" pattern="(.+)" />
+			<parameter name="Value" type="string" description="Identification value" defaultValue="" pattern="(.+)" />
+			<parameter name="Select" type="string" description="Option to select" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+		<doc>HybridSelect</doc>
+	</command>
+	<command name="HybridRunJavascript(WebViewLocator, Index, Script)" appiumName="ExecuteScript(script)" method="hybridRunJavascript" version="3" domain="device" driverDomain="device" retKey="text" appium="true">
+		<commandString>Run Javascript in a WebView</commandString>
+		<appiumCommandString>Execute script</appiumCommandString>
+		<description>Run Javascript in a WebView.</description>
+		<parameters>
+			<parameter name="WebViewLocator" type="string" description="WebView locator string like id=web or empty for the first WebView in page" defaultValue="" pattern="(.*)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Script" type="string" description="Javascript" defaultValue="" pattern="(.+)" appium="true"/>
+		</parameters>
+		<return>string</return>
+		<doc>HybridRunJavaScript</doc>
+	</command>
+	<command name="HybridWaitForPageLoad(Timeout)" method="hybridWaitForPageLoad" version="3" domain="device" driverDomain="device" web="true">
+		<commandString>Wait for page to reload, timeout: {0} ms</commandString>
+		<description>Wait for web page to load</description>
+		<parameters>
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>HybridWaitForPageLoad</doc>
+	</command>
+    <command name="HybridClearCache(ClearCookies, ClearCache)" method="hybridClearCache" version="3" domain="device" driverDomain="device" throwsOnFail ="true">
+        <commandString>Clear browser cookies: {0} and cache: {1}</commandString>
+        <description>Clear browser cookies and/or cache</description>
+        <parameters>
+            <parameter name="ClearCookies" type="bool" description="If true cookies will be cleared" defaultValue="true" pattern="(true|false)" />
+            <parameter name="ClearCache" type="bool" description="If true cache will be cleared" defaultValue="true" pattern="(true|false)" />
+        </parameters>
+        <return>void</return>
+    </command>
+
+<heading name="Utilities" />
+	<command name="Sleep(time)" method="sleep" version="3" domain="utils" driverDomain="utils" load="true" manual="true" appium="true">
+		<commandString>Sleep for {0} ms</commandString>
+		<description>Pause the script for a specified time</description>
+		<documentation>
+			Pause the script for a specified time.
+		</documentation>
+		<parameters>
+			<parameter name="Time" type="integer" description="The time to pause in MiliSec" defaultValue="1000" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>Sleep</doc>
+	</command>
+	<command name="SetDevice(Device)" method="setDevice" version="3" domain="utils" driverDomain="utils" load="true" appium="true">
+		<commandString>Set device {0}</commandString>
+		<description>Set the active device under test</description>
+		<documentation>
+			Sets the device.
+		</documentation>
+		<parameters>
+            <parameter name="Device" type="application" description="Device name" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="WaitForDevice(Device, Timeout)" method="waitForDevice" version="3" domain="utils" driverDomain="utils" autoGenerated="false" requireAgent="false">
+		<commandString>Wait for device {0}</commandString>
+		<description>Wait for a device. Release command should be used to enable other tests to use this device again.</description>
+		<parameters>
+			<parameter name="Device" type="string" description="Search device query, for example: @os='android' and @version='4.4.2'" defaultValue="" pattern="(.+)" />
+			<parameter name="Timeout" type="integer" description="Timeout in milliseconds" defaultValue="300000" pattern="(\d+)" />
+		</parameters>
+		<doc>WaitForDevice</doc>
+		<return>string</return>
+    </command>
+
+    <command name="LockPreReservedDevice(TimeoutInMilliseconds)" method="lockPreReservedDevice" version="3" domain="utils" driverDomain="utils" vugenAutoGenerated="false" includeInUI="false" throwsOnFail="true" autoGenerated="false" >
+        <commandString>Lock Pre Reserved Device {0}</commandString>
+        <description>Lock Pre Reserved Execution Device</description>
+        <parameters>
+            <parameter name="TimeoutInMilliseconds" type="integer" description="Timeout in milliseconds" defaultValue="20000" pattern="(\d+)" />
+        </parameters>
+        <return>void</return>
+    </command>
+	<command name="SetRemoteFileMapping(FilePathOnClient, FilePathOnEHM)" method="setRemoteFileMapping" version="3" domain="utils" driverDomain="utils" vugenAutoGenerated="false" includeInUI="false" requireAgent="false" throwsOnFail="true" autoGenerated="false" >
+		<description>Set Remote File Mapping</description>
+		<documentation>
+			Maps in headless executor between the original file path to EHM file path.
+			This method should be called before uploading file to EHM, For proper file handling at headless
+		</documentation>
+		<parameters>
+			<parameter name="filePathOnClient" type="string" description="the original file path." defaultValue="" pattern="(.*)" />
+		</parameters>
+		<parameters>
+			<parameter name="filePathOnEHM" type="string" description="the EHM file path." defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+		<doc>setRemoteFileMapping</doc>
+	</command>
+	<command name="GetDevicesInformation()" method="getDevicesInformation" version="3" domain="utils" driverDomain="utils" retKey="text" requireAgent="false" appium="true">
+		<commandString>Get devices information</commandString>
+		<description>Get an XML formated string containing all the devices information</description>
+		<parameters>
+		</parameters>
+		<return>string</return>
+	</command>
+
+	<command name="GetSimCard()" method="getSimCard" version="3" domain="device" driverDomain="device" retKey="text" includeInUI="false">
+		<commandString>Get sim-card name assigned to the device</commandString>
+		<description>Get sim-card name assigned to the currently used device</description>
+		<parameters>
+		</parameters>
+		<return>string</return>
+	</command>
+
+	<command name="GetSimCards(readyToUse)" method="getSimCards" version="3" domain="device" driverDomain="device" retKey="textArray" includeInUI="false">
+		<commandString>Get list of sim-card names which are either ready to use or already assigned (depeand on the argument)</commandString>
+		<description>Get list of sim-card names which are either ready to use or already assigned (depeand on the argument) to the currently used device</description>
+		<parameters>
+			<parameter name="readyToUse" type="bool" description="If TRUE return all available sim cards which are ready to use. If FALSE return all sim cards assigned for the device" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>string_array</return>
+	</command>
+
+	<command name="SetSimCard(simCardName)" method="setSimCard" version="3" domain="device" driverDomain="device" includeInUI="false">
+        <commandString>Load or unload sim card</commandString>
+        <description>Load or unload sim card (to unlaod sim-card name is equal to null) to the currently used device</description>
+        <parameters>
+  			<parameter name="simCardName" type="string" description="the sim-card name, null to unload sim card form the device" defaultValue="" pattern="(.+)" />
+        </parameters>
+        <return>Void</return>
+    </command>
+
+    <command name="GetInstalledApplications()" method="getInstalledApplications" version="3" domain="device" driverDomain="device" retKey="text">
+        <commandString>Get installed application on the device {0}</commandString>
+        <description>Get a string containing all installed application on the device</description>
+        <parameters/>
+        <return>string</return>
+    </command>
+
+	<command name="ReleaseDevice(DeviceName, ReleaseAgent, RemoveFromDeviceList, ReleaseFromCloud)" method="releaseDevice" version="3" domain="utils" driverDomain="utils" qtpMethod="ReleaseDevice">
+		<commandString>Release device/agent</commandString>
+		<description>Release device as well as the agent assigned to it. It will enable other tests that are waiting to be executed to start doing so.</description>
+		<parameters>
+			<parameter name="DeviceName" type="application" description="Name of the device to release" defaultValue="" pattern="(.*)" />
+			<parameter name="ReleaseAgent" type="bool" description="Deprecated. If TRUE or FALSE then agent will be released" defaultValue="true" pattern="(true|false)" />
+			<parameter name="RemoveFromDeviceList" type="bool" description="If TRUE then the device will be remove from the device list" defaultValue="false" pattern="(true|false)" />
+			<parameter name="ReleaseFromCloud" type="bool" description="If TRUE then the device will be released from the cloud" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="AddDevice(serialNumber, deviceName)" method="addDevice" version="3" domain="utils" driverDomain="utils" retKey="name" requireAgent="false">
+		<commandString>Add / reserve device : {1}</commandString>
+		<description>Add / reserve device. return the name that should be used to access the device.</description>
+		<parameters>
+			<parameter name="SerialNumber" type="string" description="the device serial number / UDID" defaultValue="" pattern="(.+)" />
+			<parameter name="DeviceName" type="string" description="the device suggested name (will add an index if the name exists)" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>string</return>
+	</command>
+
+	<command name="Comment(comment)" method="comment" version="3" domain="utils" driverDomain="utils" autoGenerated="false" vugenAutoGenerated="false" load="true">
+		<commandString> {0}</commandString>
+		<description>Comment</description>
+		<parameters>
+			<parameter name="Comment" type="string" description="Comment" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+
+	<command method="getAvailableAgentPort" scriptMethod="getAvailableAgentPort2" version="2" domain="utils" driverDomain="utils" includeInUI="false" retKey="port" requireAgent="false" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<description>Get an available SeeTest agent port.</description>
+		<documentation>
+			Get available Agent Port.
+			Get a port number of a SeeTest agent supporting (licensed to) the given
+			device type.
+		</documentation>
+		<parameters>
+			<parameter name="featureName" type="string" description="A device type that is supported by the requested agent. One of ANDROID, IPHONE, BLACKBERRY or WINDOWS_PHONE." defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>int</return>
+	</command>
+	<command method="exit" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<description>Exit SeeTest</description>
+		<documentation>
+			Exit SeeTest.
+		</documentation>
+		<return>void</return>
+	</command>
+	<command name="StartVideoRecord()" method="startVideoRecord" version="3" domain="device" driverDomain="device">
+		<commandString>Start Video Record {0}</commandString>
+		<description>Start the video recording</description>
+		<documentation>
+			Start the video recording.
+		</documentation>
+		<parameters>
+		</parameters>
+		<return>void</return>
+		<doc>StartVideoRecord</doc>
+	</command>
+	<command name="StopVideoRecord()" method="stopVideoRecord" version="3" domain="device" driverDomain="device">
+		<commandString>Stop Video Record {0}</commandString>
+		<description>Stop the video recording</description>
+		<documentation>
+			Stop the video recording.
+		</documentation>
+		<parameters>
+		</parameters>
+		<return>string</return>
+		<doc>StopVideoRecord</doc>
+	</command>
+	<command name="StartStepsGroup(Caption)" method="startStepsGroup" version="3" domain="utils" driverDomain="utils" load="false" manual="false">
+		<commandString>Start steps of group {0}</commandString>
+		<description>Start grouping steps</description>
+		<documentation>
+			Start grouping steps
+		</documentation>
+		<parameters>
+			<parameter name="Caption" type="string" description="The group's caption which will appear at the report" defaultValue="" />
+		</parameters>
+		<return>void</return>
+		<doc>StartStepsGroup</doc>
+	</command>
+	<command name="StopStepsGroup" method="stopStepsGroup" version="3" domain="utils" driverDomain="utils" load="false" manual="false">
+		<commandString>Stop steps grouping</commandString>
+		<description>Stop collecting steps for report group</description>
+		<documentation>
+			Stop grouping steps
+		</documentation>
+		<return>void</return>
+		<doc>StopStepsGroup</doc>
+	</command>
+	<command name="StartTransaction(name)" method="startTransaction" version="3" domain="utils" driverDomain="utils" load="false" manual="false">
+		<commandString>Start transaction {0}</commandString>
+		<description>Start to measure transaction duration</description>
+		<documentation>
+			Start to measure transaction duration
+		</documentation>
+		<parameters>
+			<parameter name="Name" type="string" description="Name of the transaction" defaultValue="" />
+		</parameters>
+		<return>void</return>
+		<doc>StartTransaction</doc>
+	</command>
+	<command name="EndTransaction(name)" method="endTransaction" version="3" domain="utils" driverDomain="utils" load="false" manual="false">
+		<commandString>End transaction {0}</commandString>
+		<description>End measuring transaction duration</description>
+		<documentation>
+			End measuring transaction duration
+		</documentation>
+		<parameters>
+			<parameter name="Name" type="string" description="Name of the transaction" defaultValue="" />
+		</parameters>
+		<return>void</return>
+		<doc>EndTransaction</doc>
+	</command>
+
+<heading name="Monitoring / Profiling"/>
+	<command name="GetMonitorsData(csvFilePath)" method="getMonitorsData" version="3" domain="utils" driverDomain="utils" retKey="text">
+    <commandString>Get monitors data</commandString>
+    <description>Returns a CSV format of the running monitors (CPU/Memomy) for all
+      devices
+    </description>
+    <parameters>
+      <parameter name="CSV file path" type="string"
+        description="If set will save the CSV in the given location (should be absolute path), if not set will use a default location."
+        defaultValue="" pattern="(.*)"/>
+    </parameters>
+    <return>string</return>
+    <doc>GetMonitorsData</doc>
+  </command>
+	<command name="StartMonitor(packageName)" method="startMonitor" version="3" domain="device" driverDomain="device">
+    <commandString>Start monitor {0}</commandString>
+    <description>Clear monitoring collection data collected so far. If packageName is not empty, the application identified by this packageName will start being monitored.
+    </description>
+    <parameters>
+      <parameter name="PackageName" type="string"
+        description="Package name (Android) or Bundle ID (iOS) of application" defaultValue="" pattern="(.+)" />
+    </parameters>
+    <return>void</return>
+    <doc>StartMonitor</doc>
+  </command>
+	<command name="GetCounter(counterName)" method="getCounter" version="3" domain="device" driverDomain="device" retKey="text">
+    <commandString>Get {0} counter</commandString>
+    <description>Get monitor counter value</description>
+    <parameters>
+      <parameter name="CounterName" type="property_monitor"
+        description="Counter name (cpu, memory...)" defaultValue="" pattern="(.+)" />
+    </parameters>
+    <return>string</return>
+    <doc>GetCounter</doc>
+  </command>
+	<command name="SetMonitorTestState(testStatus)" method="setMonitorTestState" version="3" domain="device" driverDomain="device" deprecated="true">
+    <commandString>Set monitor test status to {0}</commandString>
+    <description>Set the test status to the monitors</description>
+    <parameters>
+      <parameter name="Test Status" type="string"
+        description="Set the current status of the test to be used by the monitors"
+        defaultValue="" pattern="(.*)" />
+    </parameters>
+    <return>void</return>
+  </command>
+	<command name="SetMonitorPollingInterval(timeMilli)" method="setMonitorPollingInterval" version="3" domain="device" driverDomain="device">
+    <commandString>Set monitor polling interval {0}</commandString>
+    <description>Set monitor polling interval</description>
+    <parameters>
+      <parameter name="Time milli" type="integer"
+        description="The monitor polling time interval in milliseconds"
+        defaultValue="30000" pattern="(\d+)" />
+    </parameters>
+    <return>void</return>
+  </command>
+   <command name="collectSupportData(ZipDestination, ApplicationPath, Device, Scenario, ExpectedResult, ActualResult)" method="collectSupportData" version="3" domain="utils" driverDomain="utils" includeInUI="false" retKey="source">
+	<commandString>Collect Support Data</commandString>
+	<description></description>
+	<parameters>
+		<parameter name="ZipDestination" type="string" description="The path in  which the zip will be saved. If empty, a default path will be used" defaultValue="" pattern="(.*)" />
+		<parameter name="ApplicationPath" type="string" description="An absolute path to the application file on the PC" defaultValue="" pattern="(.*)" />
+		<parameter name="Device" type="application" description="Device name" defaultValue="" pattern="(.+)" />
+		<parameter name="Scenario" type="string" description="Description of your scenario" defaultValue="" pattern="(.+)" />
+		<parameter name="ExpectedResult" type="string" description="The result you expected" defaultValue="" pattern="(.+)" />
+		<parameter name="ActualResult" type="string" description="The result you got after running the scenario" defaultValue="" pattern="(.+)" />
+	</parameters>
+	   <return description="returns the collectSupportData folder path">string</return>
+	</command>
+	<command name="collectSupportData(ZipDestination, ApplicationPath, Device, Scenario, ExpectedResult, ActualResult, WithCloudData, OnlyLatestLogs)" method="collectSupportData" version="3" scriptMethod="collectSupportData2" domain="utils" driverDomain="utils" includeInUI="false" retKey="source">
+	<commandString>Collect Support Data</commandString>
+	<description></description>
+	<parameters>
+		<parameter name="ZipDestination" type="string" description="The path in  which the zip will be saved. If empty, a default path will be used" defaultValue="" pattern="(.*)" />
+		<parameter name="ApplicationPath" type="string" description="An absolute path to the application file on the PC" defaultValue="" pattern="(.*)" />
+		<parameter name="Device" type="application" description="Device name" defaultValue="" pattern="(.+)" />
+		<parameter name="Scenario" type="string" description="Description of your scenario" defaultValue="" pattern="(.+)" />
+		<parameter name="ExpectedResult" type="string" description="The result you expected" defaultValue="" pattern="(.+)" />
+		<parameter name="ActualResult" type="string" description="The result you got after running the scenario" defaultValue="" pattern="(.+)" />
+		<parameter name="WithCloudData" type="bool" description="Include cloud data in the support folder" defaultValue="true" pattern="(true|false)" />
+		<parameter name="OnlyLatestLogs" type="bool" description="Include only latest logs in the support folder" defaultValue="true" pattern="(true|false)" />
+	</parameters>
+	  <return description="returns the collectSupportData folder path">string</return>
+  </command>
+<heading name="Object other" />
+	<command name="Click(Zone, Element, Index, ClickCount, X, Y)" method="click" version="2" scriptMethod="clickOffset" domain="object" driverDomain="object" web="true" load="true" manual="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Click on {0}:{1}  in offset({4},{5})</commandString>
+		<description>Click on or near to an element (the proximity to the element is specified by a X-Y offset)</description>
+		<documentation>
+			Click on or near to an element. The offset is specified by x, y.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of Clicks" defaultValue="1" pattern="(\d+)" />
+			<parameter name="X" type="integer" description="Horizontal Offset from Element" defaultValue="0" pattern="((\d|-)+)" />
+			<parameter name="Y" type="integer" description="Vertical Offset from Element" defaultValue="0" pattern="((\d|-)+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ClickOffset</doc>
+	</command>
+	<command name="SendWhileNotFound(ToSend, Zone, ElementToFind, ElementToFindIndex, Timeout, Delay)" method="sendWhileNotFound" version="2" domain="object" driverDomain="object" scriptMethod="sendWhileNotFound2" qtpMethod="SendWhileNotFound2" web="true" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Send {0} while {2} is not found</commandString>
+		<description>Send a given text while an element is not found</description>
+		<parameters>
+			<parameter name="To Send" type="string" description="Insert Text To Send" defaultValue="" pattern="(.*)" />
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select Element to Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find index" type="integer" description="Element to Find Index" defaultValue="0" pattern="(.+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in MiliSec)" defaultValue="1000" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SendWhileNotFound</doc>
+	</command>
+
+	<command name="LongClick(Zone, Element, Index, ClickCount, X, Y)" method="longClick" version="3" domain="object" driverDomain="object" web="true" load="true" manual="true">
+		<commandString>Long Click on {0}:{1} in offset({4},{5})
+		</commandString>
+		<description>Long click on or near to an element (the proximity to the element is specified by a X-Y offset)</description>
+		<documentation>
+			Long click on or near to an element (the proximity to the element is specified by a X-Y offset).
+			</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of Clicks" defaultValue="1" pattern="(\d+)" />
+			<parameter name="X" type="integer" description="Horizontal Offset from Element" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical Offset from Element" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>LongClick</doc>
+	</command>
+	<command name="IsElementBlank(Zone, Element, Index, ColorGroups)" method="isElementBlank" version="3" domain="object" driverDomain="object" web="true" retKey="found">
+		<commandString>Check if {1} ({0}) is blank</commandString>
+		<description>Check if a given element found in the specified zone is blank; if blank returns TRUE if not found returns FALSE</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Element to find" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="ColorGroups" type="integer" description="The number of color groups that indicate an image" defaultValue="10" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+		<doc>IsElementBlank</doc>
+	</command>
+	<command name="GetElementCount(Zone, Element)" method="getElementCount" version="3" domain="object" driverDomain="object" web="true" retKey="count" autoGenerated="true" load="true">
+		<commandString>Count the number of times the element {1} is found</commandString>
+		<description>Count the number of times an element is been found in the current screen.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="the element zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="the element name" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return description="the number of times the elment was identified">int</return>
+		<doc>GetElementCount</doc>
+	</command>
+	<command name="ClickIn(Zone, SearchElement, Index, Direction, ClickElementZone, ClickElement, ClickElementIndex, Width, Height, ClickCount)" method="clickIn" version="2" scriptMethod="clickIn3" qtpMethod="ClickIn3" domain="object" driverDomain="object" web="true" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Click {3} to {1} on {5}</commandString>
+		<description>Search for an element and click on an element near him. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="SearchElement" type="element" description="Search Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElementZone" type="zone" description="Click Element Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElement" type="element" description="Click Element" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElementIndex" type="integer" description="Click Element Index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of Clicks" defaultValue="1" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ClickIn</doc>
+	</command>
+	<command name="GetTextIn(Zone, Element, Index, TextZone, Direction, Width, Height)" method="getTextIn" scriptMethod="getTextIn2" version="2" domain="object" driverDomain="object" web="true" retKey="text" vugenAutoGenerated="false">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Get Text {4} to {1} in zone: {0} width: {5} height: {6}</commandString>
+		<description>Get a text in a specified area indicate by an element,	direction, width and height. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="TextZone" type="zone" description="The zone to extract the text from" defaultValue="" pattern="(.+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>string</return>
+		<doc>GetTextIn</doc>
+	</command>
+	<command name="GetElementCountIn(ZoneName, ElementSearch,Index,Direction,ElementCountZone,ElementCount,Width,Hight)" method="getElementCountIn" version="3" domain="object" driverDomain="object" web="true" autoGenerated="true" retKey="count">
+		<commandString>Count the times{5}:{4} is found {3} relative to {1}:{0}</commandString>
+		<description>Search for an element and count the number of times an element is found near him.The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone Name" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element Search" type="element" description="Element Search" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="Element Count Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element Count" type="element" description="Element to count" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>int</return>
+	</command>
+	<command name="GetCoordinateColor(X, Y)" method="getCoordinateColor" version="3" domain="object" driverDomain="object" autoGenerated="true" load="true" retKey="color" vugenAutoGenerated="true">
+		<commandString>Get RGB color at x: {0}, y: {1}</commandString>
+		<description>Returns an integer representation in the RGB color model for coordinate (x,y) </description>
+		<documentation>Returns an integer representation in the RGB color model for coordinate (x,y) </documentation>
+		<parameters>
+			<parameter name="X" type="integer" description="the X coordinate of the target pixel" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="the Y coordinate of the target pixel" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>int</return>
+		<doc>GetCoordinateColor</doc>
+	</command>
+	<command name="FlickElement(Zone, Element, Index, Direction)" method="flickElement" version="3" domain="object" driverDomain="object" web="true" load="true">
+		<commandString>Flick {1} {3}</commandString>
+		<description>Flick the element in a given direction</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction_no_inside" description="Direction to flick" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+		<doc>FlickElement</doc>
+	</command>
+	<command name="ClickCoordinate(X, Y, ClickCount)" method="clickCoordinate" version="3" domain="device" driverDomain="device" load="true" manual="true">
+		<commandString>Click at x: {0}, y: {1}</commandString>
+		<description>Click in window X,Y coordinates</description>
+		<documentation>
+			Click in window X,Y coordinates related to the device screen.
+		</documentation>
+		<parameters>
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of clicks" defaultValue="1" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ClickCoordinate</doc>
+	</command>
+		<command name="ElementGetTableRowsCount(Zone, tableLocator, tableIndex, visible)" method="elementGetTableRowsCount" version="3" domain="object" retKey="count" includeInUI="true" web="true">
+        <commandString>Get table rows count {0}[{1}], only visible {2}</commandString>
+        <description>Get table total or visible rows count</description>
+        <parameters>
+            <parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+            <parameter name="TableLocator" type="element" description="Select Table Locator" defaultValue="" pattern="(.+)" />
+            <parameter name="TableIndex" type="integer" description="Table Locator Index" defaultValue="0" pattern="(\d+)" />
+            <parameter name="Visible" type="bool" description="Only visible" defaultValue="false" pattern="(true|false)" />
+        </parameters>
+        <return>int</return>
+        <doc>ElementGetTableRowsCount</doc>
+    </command>
+    <command name="ElementScrollToTableRow(Zone, tableLocator, tableIndex, rowIndex)" method="elementScrollToTableRow" version="3" domain="object" includeInUI="true" web="true">
+        <commandString>Scroll to row {2} of table {0}[{1}] </commandString>
+        <description>Scroll table / list to the given row</description>
+        <parameters>
+            <parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)" />
+            <parameter name="TableLocator" type="element" description="Select Table Locator" defaultValue="" pattern="(.+)" />
+            <parameter name="TableIndex" type="integer" description="Table Locator Index" defaultValue="0" pattern="(\d+)" />
+            <parameter name="RowIndex" type="integer" description="Row Index" defaultValue="0" pattern="(\d+)" />
+        </parameters>
+        <doc>ElementScrollToTableRow</doc>
+    </command>
+	<command name="Drag(Zone, Element, Index, XOffset, YOffset)" appiumName="Drag(Element, XOffset, YOffset)" appium="true" method="drag" version="3" domain="object" driverDomain="object" web="true" manual="true">
+		<commandString>Drag {0}:{1} X offset {3} Y offset {4}</commandString>
+		<appiumCommandString>Drag {0}:{1} X offset {3} Y offset {4}</appiumCommandString>
+		<description>Drag an element in a specified zone (you can drag the 2nd, 3rd etc	appearance of the element by setting index to 1, 2 etc)</description>
+		<documentation>
+			Drag an element in a specified zone.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)"/>
+			<parameter name="Element" type="element" description="Select Element to drag" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element Order (=the number of times the element appears more and above the first time)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="XOffset" type="integer" description="X drag offset" defaultValue="0" pattern="((\d|-)+)" appium="true"/>
+			<parameter name="YOffset" type="integer" description="Y drag offset" defaultValue="0" pattern="((\d|-)+)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>Drag</doc>
+	</command>
+	<command name="DragDrop(Zone, DragElement, DragIndex, DropElement, DropIndex)" method="dragDrop" version="3" vugenAutoGenerated="false" domain="object" driverDomain="object" web="true" manual="true">
+		<commandString>Drag {0}:{1} and drop it at {3}</commandString>
+		<description>Drag an element in a specified zone and drop it at a second element</description>
+		<documentation>
+			Drag an element in a specified zone and drop it at a second element
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="DragElement" type="element" description="Drag element" defaultValue="" pattern="(.+)" />
+			<parameter name="DragIndex" type="integer" description="Drag element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="DropElement" type="element" description="Drop element" defaultValue="" pattern="(.+)" />
+			<parameter name="DropIndex" type="integer" description="Drop element index" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="ElementListPick(ListZone, ListLocator, ElementZone, ElementLocator, Index, Click)" method="elementListPick" version="3" domain="device" driverDomain="device">
+		<commandString>Select element {3} in list {1}</commandString>
+		<description>Select an element in a list (first make the element visible)</description>
+		<parameters>
+			<parameter name="ListZone" type="zone" description="Select List Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ListLocator" type="element" description="List locator" defaultValue="" pattern="(.*)" />
+			<parameter name="ElementZone" type="zone" description="Select Element Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ElementLocator" type="element" description="Element locator" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click" type="bool" description="If TRUE then click" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+		<doc>ElementListPick</doc>
+	</command>
+
+	<command name="ElementListVisible(ListLocator, ElementLocator, Index)" method="elementListVisible" version="3" domain="device" driverDomain="device" retKey="found">
+		<commandString>Element {1} make visible</commandString>
+		<description>Make the target element visible</description>
+		<parameters>
+			<parameter name="ListLocator" type="string" description="List locator" defaultValue="" pattern="(.*)" />
+			<parameter name="ElementLocator" type="string" description="Element locator" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+	</command>
+	<command name="GetTextIn(Zone, Element, Index, TextZone, Direction, Width, Height, xOffset, yOffset)" method="getTextIn" scriptMethod="getTextIn3" version="2" domain="object" driverDomain="object" web="true" retKey="text" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Get Text {4} to {1} in zone: {0} width: {5} height: {6}</commandString>
+		<description>Get the text in a specific area relative to an element, index, direction, width and height. Direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="TextZone" type="zone" description="The zone to extract the text from" defaultValue="" pattern="(.+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="xOffset" type="integer" description="identification rectangle x offset" defaultValue="0" pattern="((\d|-)+)" />
+			<parameter name="yOffset" type="integer" description="identification rectangle y offset" defaultValue="0" pattern="((\d|-)+)" />
+		</parameters>
+		<return>string</return>
+		<doc>GetTextIn</doc>
+	</command>
+	<command name="IsFoundIn(Zone, SearchElement, Index, Direction, ElementFindZone, ElementToFind, Width, Height)" method="isFoundIn" version="3" domain="object" driverDomain="object" web="true" retKey="found">
+		<commandString>Find if {5} exists {3} to {1}</commandString>
+		<description>Search for an element and check if an element related to it exist. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="SearchElement" type="element" description="Search Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="ElementFindZone" type="zone" description="Find Element Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ElementToFind" type="element" description="Element to Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+		<doc>IsFoundIn</doc>
+	</command>
+	<command name="VerifyIn(Zone, SearchElement, Index, Direction, ElementFindZone, ElementToFind, Width, Height)" method="verifyIn" version="3" domain="object" driverDomain="object" web="true" throwsOnFail="true">
+		<commandString>Verify {5} exists {3} to {1}</commandString>
+		<description>Search for an element and verify element related to it	exist. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<documentation>
+			Verify that an element("elementToFind") is found near to another element("elementSearch").
+			The direction can be UP, DOWN, LEFT and RIGHT.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="SearchElement" type="element" description="Search Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="ElementFindZone" type="zone" description="Find Element Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ElementToFind" type="element" description="Element to Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>VerifyIn</doc>
+	</command>
+
+<heading name="Device other" />
+	<command name="GetVisualDump(Type)" appiumName="GetPageSource()" appium="true" method="getVisualDump" version="3" domain="device" driverDomain="device" web="true" retKey="text">
+		<commandString>Get visual dump: {0}</commandString>
+		<appiumCommandString>Get Page Source</appiumCommandString>
+		<description>Get visual dump</description>
+		<parameters>
+			<parameter name="Type" type="dump_type" description="Set the dump type" defaultValue="Native" pattern="(.+)" />
+		</parameters>
+		<return>string</return>
+		<doc>GetVisualDump</doc>
+	</command>
+	<command name="FlickCoordinate(X, Y, Direction)" method="flickCoordinate" version="3" domain="device" driverDomain="device" load="true">
+		<commandString>Flick {2} from x: {0}, y: {1}</commandString>
+		<description>Flick from a given point in a given direction</description>
+		<parameters>
+			<parameter name="X" type="integer" description="Horizontal coordinate" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical coordinate" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction_no_inside" description="Direction to flick" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+		<doc>FlickCoordinate</doc>
+	</command>
+
+	<command name="Pinch(Inside, X, Y, Radius)" appiumName="Pinch(x, y)" method="pinch" version="2" domain="device" driverDomain="device" manual="true" deprecated="true" includeInUI="false" appium="true">
+		<commandString>Pinch at x: {1}, y: {2}, In: {0}, Radius: {3}</commandString>
+		<appiumCommandString>Pinch at x: {0}, y: {1}</appiumCommandString>
+		<description>Pinch In/Out at X,Y in specific radius, if X and Y equal to 0, the pinch will be performed from the center of the screen. In most cases, pinching IN would be used to ZOOM OUT, and pinching OUT would be used to ZOOM IN.</description>
+		<parameters>
+			<parameter name="Inside" type="bool" description="Set 'true' to pinch in (zoom out), 'false' to pinch out (zoom in) " defaultValue="true" pattern="(true|false)" />
+			<parameter name="X" type="integer" description="X center" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Y" type="integer" description="Y center" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Radius" type="integer" description="The pinch radius" defaultValue="100" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+		<doc>Pinch</doc>
+	</command>
+	<command name="Pinch(Inside, X, Y, Radius, Horizontal)" appiumName="Pinch(X, Y, Radius)" appium="true" method="pinch" version="3" domain="device" scriptMethod="pinch2" driverDomain="device" manual="true">
+		<commandString>Pinch at x: {1}, y: {2}, In: {0}, Radius: {3}, Horizontal: {4}</commandString>
+		<appiumCommandString>Pinch at x: {1}, y: {2}, In: {0}, Radius: {3}, Horizontal: {4}</appiumCommandString>
+		<description>Pinch In/Out at X,Y in specific radius, if X and Y equal to 0, the pinch will be performed from the center of the screen. In most cases, pinching IN would be used to ZOOM OUT, and pinching OUT would be used to ZOOM IN.
+		</description>
+		<parameters>
+			<parameter name="Inside" type="bool" description="Set 'true' to pinch in (zoom out), 'false' to pinch out (zoom in) " defaultValue="true" pattern="(true|false)" />
+			<parameter name="X" type="integer" description="X center" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Y" type="integer" description="Y center" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Radius" type="integer" description="The pinch radius" defaultValue="100" pattern="(\d+)" appium="true"/>
+			<parameter name="Horizontal" type="bool" description="Vertical / horizontal pinch" defaultValue="false" pattern="(true|false)" />
+		</parameters>
+		<return>bool</return>
+		<doc>Pinch</doc>
+	</command>
+	<command name="Shake()" method="shake" version="3" domain="device" driverDomain="device" manual="true">
+		<commandString>Shake</commandString>
+		<description>Simulating Shake operation on the device.</description>
+		<return>void</return>
+		<doc>Shake</doc>
+	</command>
+	<command method="openDevice" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<description>Open device screen</description>
+		<documentation>
+			Opens current device's screen.
+		</documentation>
+		<return>void</return>
+	</command>
+	<command method="closeDevice" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<description>Close connection to the device</description>
+		<documentation>
+			Close connection to the device.
+		</documentation>
+		<return>void</return>
+	</command>
+	<command name="CloseDeviceReflection()" method="closeDeviceReflection" version="3" domain="utils" driverDomain="utils" includeInUI="true">
+		<commandString>Close device reflection</commandString>
+		<description>Hides the current device screen. If the current device screen is not open, this command does nothing</description>
+		<documentation>
+			Hides the current device screen. If the current device screen is not open, this command does nothing.
+		</documentation>
+		<return>void</return>
+	</command>
+	<command name="Run(command)" method="run" version="3" domain="device" driverDomain="device" retKey="text" load="true">
+		<commandString>Run shell command: {0}</commandString>
+		<description>Run the given command line. When running an executable a full path	should be given.</description>
+		<documentation>
+			Run the given command line as shell command on the device (adb for android and SSH for iOS).
+			When running an executable a full path	should be given.
+		</documentation>
+		<parameters>
+			<parameter name="Command" type="string" description="The command to run" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>string</return>
+		<doc>Run</doc>
+	</command>
+	<command name="DragCoordinates(X1, Y1, X2, Y2, Time)" appiumName="Swipe(startx, starty, endx, endy, time)" method="dragCoordinates" scriptMethod="dragCoordinates2" version="2" domain="device" driverDomain="device" load="true" manual="true" vugenAutoGenerated="omitIndex" appium="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Drag from {0},{1} to {2},{3}</commandString>
+		<appiumCommandString>Swipe from {0},{1} to {2},{3}</appiumCommandString>
+		<description>Drag base on coordinates</description>
+		<parameters>
+			<parameter name="X1" type="integer" description="First point X" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Y1" type="integer" description="First point Y" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="X2" type="integer" description="Second point X" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Y2" type="integer" description="Second point Y" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Time" type="integer" description="Drag time (ms)" defaultValue="2000" pattern="(\d+)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>Drag Coordinates</doc>
+	</command>
+	<command name="ReceiveIncomingSMS (FromNumber, Msg)" method="receiveIncomingSMS" version="3"
+			 appium="true" domain="device" driverDomain="device">
+		<commandString>receiveIncomingSMS: {0} {1}</commandString>
+		<description>Initiate a 3rd party SMS to be received by the device.</description>
+		<parameters>
+			<parameter name="FromNumber" type="string" description="Number that the SMS will come from" defaultValue="" pattern="(.+)" />
+			<parameter name="Msg" type="string" description="Text of the message to receive" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="ReceiveIncomingCall (FromNumber, HangupInSeconds)" method="receiveIncomingCall" version="3"
+			 appium="true" domain="device" driverDomain="device">
+		<commandString>receiveIncomingCall: {0} {1}</commandString>
+		<description>Initiate a 3rd party phone call to be received by the device.</description>
+		<parameters>
+			<parameter name="FromNumber" type="string" description="Number that the call will come from" defaultValue="" pattern="(.+)" />
+			<parameter name="HangupInSeconds" type="integer" description="How long to wait before hanging up while ringing" defaultValue="" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="GetLastSms(Timeout)" method="getLastSMS" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" scriptMethod="getLastSMS" retKey="text" includeInUI="false" deprecated="true">
+        <commandString>getLastSMS: {0}</commandString>
+        <description>Get last received SMS or wait up to 'timeout' milliseconds to receive one.</description>
+        <parameters>
+            <parameter name="Timeout" type="integer" description="Wait timeout" defaultValue="5000" pattern="(\d+)" />
+        </parameters>
+        <return>string</return>
+    </command>
+
+	<command name="GetAllSms(Timeout)" method="getAllSms" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" scriptMethod="getAllSms" retKey="textArray" includeInUI="false" deprecated="true">
+		<commandString>GetAllSms: {0}</commandString>
+		<description>Get all  SMS or wait up to 'timeout' milliseconds.</description>
+		<parameters>
+			<parameter name="Timeout" type="integer" description="Wait timeout"
+				defaultValue="5000" pattern="(\d+)" />
+		</parameters>
+		<return>string_array</return>
+	</command>
+    <command name="ClearAllSms()" method="clearAllSms" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" scriptMethod="clearAllSms" includeInUI="false" deprecated="true">
+        <commandString>clearAllSms</commandString>
+        <description>Clear all SMS on a device.</description>
+        <parameters>
+        </parameters>
+        <return>void</return>
+    </command>
+    <command name="P2cx(Percentage)" method="p2cx" version="3" domain="device" driverDomain="device" retKey="pixel">
+		<commandString>Convert percentage into pixel</commandString>
+		<description>Convert percentage into pixel.</description>
+		<parameters>
+			<parameter name="Percentage" type="integer" description="Screen Percentage" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>int</return>
+	</command>
+    <command name="P2cy(Percentage)" method="p2cy" version="3" domain="device" driverDomain="device" retKey="pixel">
+		<commandString>Convert percentage into pixel</commandString>
+		<description>Convert percentage into pixel.</description>
+		<parameters>
+			<parameter name="Percentage" type="integer" description="Screen Percentage" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>int</return>
+	</command>
+	<command name="GetConnectedDevices()" method="getConnectedDevices" version="3" domain="utils" driverDomain="utils" retKey="text" requireAgent="false">
+		<commandString>Get connected devices</commandString>
+		<description>Get connected devices.</description>
+		<parameters>
+		</parameters>
+		<return>string</return>
+	</command>
+	<command name="ResetDeviceBridge()" method="resetDeviceBridge" version="3" domain="device" driverDomain="device"  includeInUI="false" deprecated="true">
+        <commandString>Reset Device Bridge</commandString>
+        <description>Reset Device Bridge.</description>
+        <parameters>
+        </parameters>
+        <return>void</return>
+    </command>
+    <command name="ResetDeviceBridge(deviceType)" method="resetDeviceBridge" scriptMethod="resetDeviceBridgeOS" version="3" domain="device" driverDomain="device" includeInUI="false" deprecated="true">
+        <commandString>Reset Device Bridge of {0}</commandString>
+        <description>Reset Device Bridge.</description>
+        <parameters>
+        	<parameter name="DeviceType" type="resetBridgeOs" description="A device type that is supported by the requested agent" defaultValue="" pattern="(.+)" />
+        </parameters>
+        <return>void</return>
+    </command>
+	<command name="GetText(Zone)" method="getText" version="3" domain="object" web="true" retKey="text">
+		<commandString>Get text from zone {0}</commandString>
+		<documentation>
+			Gets the text that appears in a specified zone.
+		</documentation>
+		<description>Get the text that appears in a specified zone</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select the Zone to Get Text From, 'TEXT' and 'NATIVE' can be used as well." defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return description="the text">string</return>
+		<doc>GetText</doc>
+	</command>
+
+<header name="Utilities other"/>
+	<command name="SyncElements(SilentTime Timeout)" method="syncElements" version="3" domain="device" driverDomain="device" retKey="found">
+		<commandString>Synchronize UI elements</commandString>
+		<description>Wait for all the UI elements on the page to appear. Works on the dump level - checks for changes in the UI dump.</description>
+		<parameters>
+			<parameter name="SilentTime" type="integer" description="The period of time for the UI elements to be static in milliseconds." defaultValue="2000" pattern="(\d+)" />
+			<parameter name="Timeout" type="integer" description="Waiting timeout in milliseconds" defaultValue="10000" pattern="(\d+)" />
+		</parameters>
+		<return description="true if operation finished successfully">bool</return>
+		<doc>SyncElements</doc>
+	</command>
+	<command name="Sync(SilentTime, Sensitivity, Timeout)" method="sync" version="3" domain="device" driverDomain="device" retKey="found">
+		<commandString>Synchronize the screen</commandString>
+		<description>Wait for the screen to be silent. Works on the graphical level of the screen.</description>
+		<parameters>
+			<parameter name="SilentTime" type="integer" description="The time for the screen to be silent in milliseconds" defaultValue="2000" pattern="(\d+)" />
+			<parameter name="Sensitivity" type="integer" description="Sensitivity from 0 - 100 (0 is maximum sensitivity)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Timeout" type="integer" description="Waiting timeout in milliseconds" defaultValue="10000" pattern="(\d+)" />
+		</parameters>
+		<return description="true if operation finished successfully">bool</return>
+		<doc>Sync</doc>
+	</command>
+
+<heading name="Configuration" />
+	<command name="SetProperty(Property, Value)" method="setProperty" version="3" domain="utils" driverDomain="utils">
+		<commandString>Set property {0} to {1}</commandString>
+		<description>Set the given property to a given value</description>
+		<documentation>
+
+		</documentation>
+		<parameters>
+			<parameter name="Key" type="configuration_property" description="key" defaultValue="" pattern="(.*)" />
+			<parameter name="Value" type="string" description="Value" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetProperty</doc>
+	</command>
+	<command name="TextFilter(Color, Sensitivity)" method="textFilter" version="3" domain="utils" driverDomain="utils">
+		<commandString>Filter color {0} </commandString>
+		<description>Filters a single color. Designed to improve text OCR.</description>
+		<documentation>
+			Filter the text recognition text color for the next command.
+			This setting will be applied on the next command only.
+			It's only supported when you use text recognition (OCR).
+		</documentation>
+		<parameters>
+			<parameter name="Color" type="string" description="text color in RGB hex decimal string (0xFFFFFF for white)." defaultValue="" pattern="(.*)" />
+			<parameter name="Sensitivity" type="integer" description="Sensitivity from 0 - 100 (0 is no sensitivity)" defaultValue="15" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>TextFilter</doc>
+	</command>
+	<command method="setOcrIgnoreCase" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<documentation>
+			Set the ignore case status (default is true).
+		</documentation>
+		<parameters>
+			<parameter name="IgnoreCase" type="bool" description="should OCR avoid case sensitivity" defaultValue="" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command method="setOcrTrainingFilePath" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<parameters>
+			<parameter name="TrainingPath" type="string" description="path to the OCR training file" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command method="setRedToBlue" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<parameters>
+			<parameter name="Red To Blue" type="bool" description="" defaultValue="" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetLanguage(Language)" method="setLanguage" version="3" domain="utils" driverDomain="utils">
+		<commandString>Set the OCR language {0} </commandString>
+		<description>Set the OCR language</description>
+		<parameters>
+			<parameter name="Language" type="lang" description="The language to use or empty to reset to English" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetLanguage</doc>
+	</command>
+	<command name="SetLanguagePropertiesFile(filePath)" method="setLanguagePropertiesFile" version="3" domain="utils" driverDomain="utils" retKey="text">
+		<commandString>Set the language properties file to {0} </commandString>
+		<description>Set language properties file</description>
+		<parameters>
+			<parameter name="Properties file" type="string" description="The language properties file path" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetDefaultTimeout(newTimeout)" method="setDefaultTimeout" version="3" domain="utils" driverDomain="utils" retKey="timeout" load="true">
+		<commandString>Set default timeout to: {0}</commandString>
+		<description>Set the default timeout for click commands</description>
+		<parameters>
+			<parameter name="New Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="20000" pattern="(\d+)" />
+		</parameters>
+		<return description="the new timeout">string</return>
+		<doc>SetDefaultTimeout</doc>
+	</command>
+	<command name="SetDefaultClickDownTime(clickDownTime)" method="setDefaultClickDownTime" version="3" domain="utils" driverDomain="utils">
+		<commandString>Set default click down time to: {0}</commandString>
+		<description>Set the default click down time in milliseconds (default is 100)</description>
+		<parameters>
+			<parameter name="DownTime" type="integer" description="Click down time value" defaultValue="100" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetDefaultClickDownTime</doc>
+	</command>
+	<command name="SetInKeyDelay(delay)" method="setInKeyDelay" version="3" includeInUI="false" domain="utils" driverDomain="utils">
+		<commandString>Set in key delay to: {0}</commandString>
+		<description>Set the time between key down and key up</description>
+		<parameters>
+			<parameter name="Delay" type="integer" description="Delay value" defaultValue="50" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetInKeyDelay</doc>
+	</command>
+	<command name="SetKeyToKeyDelay(delay)" method="setKeyToKeyDelay" version="3" includeInUI="false" domain="utils" driverDomain="utils">
+		<commandString>Set key to key delay to: {0}</commandString>
+		<description>Set the time between two key press</description>
+		<parameters>
+			<parameter name="Delay" type="integer" description="Delay value" defaultValue="50" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetKeyToKeyDelay</doc>
+	</command>
+	<command name="SetDragStartDelay(delay)" method="setDragStartDelay" version="3" domain="utils" driverDomain="utils" load="true">
+		<commandString>Set drag start delay to: {0}</commandString>
+		<description>Set the drag start delay</description>
+		<documentation>
+			Drag called after setting dragStartDelay will begin by long touch on the device in
+			the initial drag location.
+		</documentation>
+		<parameters>
+			<parameter name="Delay" type="integer" description="Delay value" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetDragStartDelay</doc>
+	</command>
+	<command name="SetDefaultWebView(webViewLocator)" method="setDefaultWebView" version="3" domain="device" driverDomain="device">
+		<commandString>Set the WebView to: {0}</commandString>
+		<description>Set the WebView to work with</description>
+		<parameters>
+			<parameter name="WebViewLocator" type="string" description="The locator of the WebView, empty to reset" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetWebAutoScroll(autoScroll)" method="setWebAutoScroll" version="3" domain="utils" driverDomain="utils">
+		<commandString>Set web autoscroll to: {0}</commandString>
+		<description>Set web autoscroll</description>
+		<parameters>
+			<parameter name="AutoScroll" type="bool" description="Set the autoscroll state" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetShowPassImageInReport(showImage)" method="setShowPassImageInReport" version="3" domain="utils" driverDomain="utils">
+		<commandString>Show pass images in report: {0}</commandString>
+		<description>when set to False will not show a screenshot of test steps that passed successfully</description>
+		<documentation>
+			Decide whether to show screenshots of every step, or only failed steps in report.
+		</documentation>
+		<parameters>
+			<parameter name="ShowPassImageInReport" type="bool" description="when set to False will not show a screenshot of test steps that passed successfully" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetShowReport(showReport)" method="setShowReport" version="3" domain="utils" driverDomain="utils">
+		<commandString>Show report: {0}</commandString>
+		<description>when set to False will not show reports steps</description>
+		<documentation>
+			when set to False will not show reports steps.
+		</documentation>
+		<parameters>
+			<parameter name="ShowReport" type="bool" description="when set to False will not show reports steps" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetShowImageInReport(showImage)" method="setShowImageInReport" version="3" domain="utils" driverDomain="utils">
+		<commandString>Show images in report: {0}</commandString>
+		<description>when set to False will not show any screenshot in report</description>
+		<documentation>
+			Decide whether to include step screenshots in report.
+		</documentation>
+		<parameters>
+			<parameter name="ShowImageInReport" type="bool" description="when set to False will not show any screenshot in report" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetShowImageAsLink(ShowImageAsLink)" method="setShowImageAsLink" version="3" includeInUI="false" domain="utils" driverDomain="utils">
+		<commandString>Show images in report as link: {0}</commandString>
+		<description>Show report images as link</description>
+		<documentation>
+			Show report images as link.
+		</documentation>
+		<parameters>
+			<parameter name="ShowImageAsLink" type="bool" description="show report images as link" defaultValue="" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+
+<!-- Not in Use -->
+<heading name="Other" />
+	<command name="SetApplicationTitle(Title)" method="setApplicationTitle" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<commandString>Set application title {0}</commandString>
+		<description>Set the active device under test</description>
+		<documentation>
+			Sets the application title.
+	 		Switch tested application/window.
+	 		The title of the application is searched in the following order:
+	 		1. search for windows with the given window ID (only if the title is a number).
+	 		2. search for complete match.
+	 		3. search for partial match (contains).
+	 		4. Regular expression match.
+	 		When working on the desktop use the 'desktop' as the application title.
+		</documentation>
+		<parameters>
+			<parameter name="Title" type="application" description="Insert New Application/Window Title" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="RightClick(Zone, Element, Index, ClickCount, X, Y)" method="rightClick" version="3" domain="object" driverDomain="object" includeInUI="false">
+		<commandString>Right click on {0}:{1} in offset({4},{5})</commandString>
+		<description>Right-click on or near to an element (the proximity to the element is specified by a X-Y offset)</description>
+		<documentation>Right-click on or near to an element (the proximity to the element is specified by a X-Y offset)</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element Order" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of Clicks" defaultValue="1" pattern="(\d+)" />
+			<parameter name="X" type="integer" description="Horizontal Offset from Element" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y" type="integer" description="Vertical Offset from Element" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="ClickIn(Zone, SearchElement, Index, Direction, ClickElement, Width, Height)" method="clickIn" version="1" vugenAutoGenerated="false" domain="object" driverDomain="object" web="true" deprecated="true">
+		<commandString>Click {3} to {1} on {4}</commandString>
+		<description>Search for an element and click on an element near him. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="SearchElement" type="element" description="Search Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElement" type="element" description="Click Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="ClickIn(Zone, SearchElement, Index, Direction, ClickElementZone, ClickElement, Width, Height, ClickCount)" method="clickIn" version="1" vugenAutoGenerated="false" scriptMethod="clickIn2_5" domain="object" driverDomain="object" web="true" deprecated="true">
+		<commandString>Click {3} to {1} on {5}</commandString>
+		<description>Search for an element and click on an element near him. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="SearchElement" type="element" description="Search Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElementZone" type="zone" description="Click Element Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElement" type="element" description="Click Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Click Count" type="integer" description="Number of Clicks" defaultValue="1" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ClickIn</doc>
+	</command>
+
+	<command name="ClickIn(Zone, SearchElement, Index, Direction, ClickElementZone, ClickElement, Width, Height)" method="clickIn" version="2" includeInUI="false" scriptMethod="clickIn2" domain="object" driverDomain="object" web="true" vugenAutoGenerated="false">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Click {3} to {1} on {5}</commandString>
+		<description>Search for an element and click on an element near him. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="SearchElement" type="element" description="Search Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElementZone" type="zone" description="Click Element Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="ClickElement" type="element" description="Click Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>ClickIn</doc>
+	</command>
+	<command name="ElementGetText(Zone, Element, Index)" appiumName="FindElement and GetText(Element)" appium="true" method="elementGetText" version="3" domain="object" driverDomain="object" web="true" retKey="text">
+		<commandString>Get Text from element {0}:{1}</commandString>
+		<appiumCommandString>FindElement By {0} and Get Text</appiumCommandString>
+		<description>Get text from element</description>
+		<parameters>
+			<parameter name="Zone" type="zone_no_ocr" description="Select Zone" defaultValue="" pattern="(.+)"/>
+			<parameter name="Element" type="element" description="Select Element" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Index" type="integer" description="Element index" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>string</return>
+		<doc>ElementGetText</doc>
+	</command>
+	<command name="ElementGetTableValue(rowLocator, rowLocatorIndex, columnLocator)" method="elementGetTableValue" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" retKey="text" deprecated="true">
+		<commandString>Get table value {0}[{1}]/{2}
+		</commandString>
+		<description>Get table cell value</description>
+		<parameters>
+			<parameter name="RowLocator" type="string" description="Row Locator" defaultValue="" pattern="(.*)" />
+			<parameter name="RowLocatorIndex" type="integer" description="Row Locator Index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="ColumnLocator" type="string" description="Column Locator" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>string</return>
+		<doc>ElementGetTableValue</doc>
+	</command>
+	<command name="Swipe(Direction, Offset)" method="swipe" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" deprecated="true">
+		<commandString>Swipe {0}</commandString>
+		<description>Swipe the screen in a given direction</description>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe" defaultValue="" pattern="(.+)" />
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="0" pattern="((\d|-)+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+
+	<command method="setProjectBaseDirectory" version="3" domain="utils" driverDomain="utils" includeInUI="false" requireAgent="false">
+		<description>Set project's directory</description>
+		<documentation>
+			Sets the project base directory.
+			This method should be called first,	before any other called is used.
+			In case of working on a remote agent, the project path should be the path on the remote machine.
+		</documentation>
+		<parameters>
+			<parameter name="projectBaseDirectory" type="string" description="the new project base directory." defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+		<doc>SetProjectBaseDirectory</doc>
+	</command>
+	<command method="setReporter" version="3" domain="utils" driverDomain="utils" includeInUI="false" retKey="text" requireAgent="false" vugenAutoGenerated="false">
+		<description>Sets the reporter. Configure the internal reporter.</description>
+		<documentation>
+			Sets the reporter. Configure the internal reporter.
+		</documentation>
+		<parameters>
+			<parameter name="reporterName" type="string" description="Comma seperated value string of reporter types. Supported types: html(=xml), pdf." defaultValue="html" pattern="(.*)" />
+			<parameter name="directory" type="string" description="The directory for the report to be generated in." defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return description="The reports directory path">string</return>
+	</command>
+	<command method="setReporter" version="2" domain="utils" driverDomain="utils" scriptMethod="setReporter2" includeInUI="false" retKey="text" requireAgent="false" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<description>Sets the reporter. Configure the internal reporter.</description>
+		<documentation>
+			Sets the reporter. Configure the internal reporter.
+		</documentation>
+		<parameters>
+			<parameter name="reporterName" type="string" description="Comma seperated value string of reporter types. Supported types: html(=xml), pdf." defaultValue="html" pattern="(.*)" />
+			<parameter name="directory" type="string" description="The directory for the report to be generated in." defaultValue="" pattern="(.*)" />
+			<parameter name="testName" type="string" description="The name of the test as would appear in the report." defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return description="The reports directory path">string</return>
+		<doc>SetReporter</doc>
+	</command>
+	<command method="generateReport" version="4" domain="utils" driverDomain="utils" includeInUI="false" requireAgent="false" vugenAutoGenerated="false">
+		<description>Generates a SeeTest report and attach it to external tool entity.</description>
+		<documentation>
+			Generates a SeeTest report and attach it to external tool entity.
+			Suply a path to java properties file containning the data for the entity update.
+			See documentation online for details.
+		</documentation>
+		<parameters>
+			<parameter name="releaseClient" type="bool" description="If FALSE then device will not be released" defaultValue="true" pattern="(true|false)" />
+			<parameter name="propFilePath" type="string" description="path to Java properties file" defaultValue="" pattern=".*" />
+		</parameters>
+		<return description="returns the report's folder path, or the created entity if exists">string</return>
+		<doc>GenerateReport</doc>
+	</command>
+	<command method="generateReport" version="3" domain="utils" driverDomain="utils" includeInUI="false" requireAgent="false" vugenAutoGenerated="false">
+		<description>Generates a SeeTest report.</description>
+		<documentation>
+			Generates a SeeTest report.
+		</documentation>
+		<return description="returns the report's folder path">string</return>
+		<doc>GenerateReport</doc>
+	</command>
+	<command method="generateReport" version="2" domain="utils" scriptMethod="generateReport2" driverDomain="utils" includeInUI="false" requireAgent="false" vugenAutoGenerated="false">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<description>Generates a SeeTest report.</description>
+		<documentation>
+			Generates a SeeTest report.
+		</documentation>
+		<parameters>
+			<parameter name="releaseClient" type="bool" description="If FALSE then device will not be released" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return description="returns the report's folder path">string</return>
+	</command>
+	<command method="releaseClient" version="3" domain="utils" includeInUI="false" requireAgent="false" vugenAutoGenerated="false">
+		<description>Release Controller.</description>
+		<documentation>
+			Release Controller.
+		</documentation>
+		<return>void</return>
+		<doc>ReleaseClient</doc>
+	</command>
+	<command method="drop" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<description>Drop all project information.</description>
+		<documentation>
+			Drop all project information.
+		</documentation>
+		<return>void</return>
+	</command>
+	<command name="Report(message, status)" method="report" version="3" domain="utils" qtpMethod="Report" driverDomain="utils" includeInUI="false" requireAgent="false">
+		<description>Report a step.</description>
+		<documentation>
+			Add a step with a custom message to the test report.
+		</documentation>
+		<parameters>
+			<parameter name="message" type="string" description="The message to report." defaultValue="" pattern="(.*)" />
+			<parameter name="status" type="bool" description="TRUE marks this step as successfully passed, FALSE marks it as failed." dfaultValue="" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="Report(pathToImage, message, status)" method="report" version="3" domain="utils" scriptMethod="reportWithImage" driverDomain="utils" includeInUI="false" requireAgent="false">
+		<description>Report a step.</description>
+		<documentation>
+			Add a step with a custom message and image to the test report.
+		</documentation>
+		<parameters>
+			<parameter name="pathToImage" type="string" description="Pass to the image, can be either a local full path or a URL." defaultValue="" pattern="(.*)" />
+			<parameter name="message" type="string" description="The message to report." defaultValue="" pattern="(.*)" />
+			<parameter name="status" type="bool" description="TRUE marks this step as successfully passed, FALSE marks it as failed." dfaultValue="" pattern="(true|false)" />
+		</parameters>
+		<return>void</return>
+		<doc>Report</doc>
+	</command>
+	<command method="getProperty" version="3" domain="utils" driverDomain="utils" includeInUI="false"  retKey="text">
+		<description>Get application property.</description>
+		<documentation>
+			Get SeeTest's property value for the given key (in %appdata%\seetest\app.properties file).
+		</documentation>
+		<parameters>
+			<parameter name="Property" type="string" description="The property key." defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return description="the property value">string</return>
+	</command>
+    <command name="GetDeviceProperty(Property)" method="getDeviceProperty" version="3" domain="utils" driverDomain="utils" retKey="text">
+        <commandString>Get device property: {0}</commandString>
+        <description>Get the value of a given property key.</description>
+        <documentation>
+            Get device property value for the given key.
+        </documentation>
+        <parameters>
+            <parameter name="Key" type="device_property" description="device_property" defaultValue="" pattern="(.+)" />
+        </parameters>
+        <return description="The property value">string</return>
+    </command>
+	<command name="CaptureElement(Name, x, y, width, height, similarity)" version="3" method="captureElement" domain="device" driverDomain="device" includeInUI="false">
+		<commandString>Capture element at ({1},{2}) width {3} and height {4} with name {0}</commandString>
+		<description>Create new element from image in given device coordinates, with given name and similarity percentage.</description>
+		<parameters>
+			<parameter name="Name" type="string" description="New element's name" defaultValue="" pattern="(.+)" />
+			<parameter name="x" type="integer" description="Image origin x coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="y" type="integer" description="Image origin y coordinate" defaultValue="" pattern="(\d+)" />
+			<parameter name="width" type="integer" description="Image width" defaultValue="" pattern="(\d*)" />
+			<parameter name="height" type="integer" description="Image height" defaultValue="" pattern="(\d*)" />
+			<parameter name="similarity" type="integer" description="the similarity between pictures" defaultValue="97" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="Capture()" version="3" method="capture" domain="device" driverDomain="device" includeInUI="false" retKey="outFile">
+		<commandString>Capture screen</commandString>
+		<description>Capture the current screen and add it to the report.</description>
+		<return description="the path of the captured image file.">string</return>
+	</command>
+	<command name="Maximize()" method="maximize" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" deprecated="true">
+		<commandString>Maximize</commandString>
+		<description>Maximize the working window</description>
+		<parameters>
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="ClickTableCell(Zone, headerElement, headerIndex, rowElement, rowIndex)" method="clickTableCell" domain="object" driverDomain="object">
+		<commandString>Click Table cell {1}/{3}</commandString>
+		<description>Clicking on table cell by its header element and row element.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Header Element" type="element" description="Select table header element" defaultValue="" pattern="(.+)" />
+			<parameter name="Header Index" type="integer" description="Header element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Row Element" type="element" description="Select table row element" defaultValue="" pattern="(\d*)" />
+			<parameter name="Row Index" type="integer" description="Row element index" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="SetWindowSize(Width, Height)" method="setWindowSize" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" deprecated="true">
+		<commandString>Set Window size to width: {0}, height: {1}</commandString>
+		<description>Set the active window size</description>
+		<documentation>
+			Set the active windows size and movie it to be fully visible.
+		</documentation>
+		<parameters>
+			<parameter name="Width" type="integer" description="Window width" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Window height" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="IsElementFound(Zone, Element)" method="isElementFound" scriptMethod="isElementFound2" version="2" domain="object" driverDomain="object" includeInUI="false" web="true" retKey="found" vugenAutoGenerated="false">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Check if {1} ({0}) is found</commandString>
+		<description>Check if a given element is found in the specified zone; if the element found returns TRUE if not found returns FALSE</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Element to find" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return>bool</return>
+		<doc>IsElementFound</doc>
+	</command>
+	<command name="isTextFound(Zone, Element, IgnoreCase)" method="isTextFound"  version="1" vugenAutoGenerated="false" domain="object" driverDomain="object" includeInUI="false" web="true" retKey="found" deprecated="true">
+		<commandString>Check if {1} ({0}) is found</commandString>
+		<description>Check if a given text is found in the specified zone; if the element found returns TRUE if not found returns FALSE</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" />
+			<parameter name="Element" type="element" description="Element to find" defaultValue="" />
+			<parameter name="IgnoreCase" type="bool" description="should command case sensitivity" defaultValue="" />
+		</parameters>
+		<return>bool</return>
+	</command>
+	<command name="GetTextIn(Zone, Element, Index, Direction, Width, Height)" method="getTextIn" version="1" vugenAutoGenerated="false" domain="object" driverDomain="object" web="true" retKey="text" deprecated="true">
+		<commandString>Get Text {3} to {1} in width: {4} height: {5}</commandString>
+		<description>Get a text in a specified area indicate by an element,	direction, width and height. The direction can be UP, DOWN, LEFT and RIGHT.</description>
+		<documentation>
+			Get a text in a specified area indicate by an element, direction, width and height.
+			The direction can be UP, DOWN, LEFT and RIGHT.
+			Use this method to get the text found in an area related to a given element.
+			When using zone NATIVE, only leafs elements will be searched in order to prevent multiple
+			occurrences of the same text (containers can include the sub elements text too).
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Anchor Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Anchor Element" defaultValue="" pattern="(.+)" />
+			<parameter name="Index" type="integer" description="Anchor Element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Direction" type="direction" description="Direction to analyze" defaultValue="" pattern="(.+)" />
+			<parameter name="Width" type="integer" description="Width of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search (0 indicate until the end/start of the window)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>string</return>
+	</command>
+	<command name="GetPosition(Zone, Element)" method="getPosition" version="1" vugenAutoGenerated="false" domain="object" driverDomain="object" retKey="click" deprecated="true">
+		<commandString>Get Position for {0}:{1}</commandString>
+		<description>Get the element position</description>
+		<documentation>
+			Gets position an position. The position is absolute.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="the element zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element to Get Position For" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return description="the comma delimited string with the X,Y of the element coordination.">string</return>
+	</command>
+	<command name="GetPositionWindowRelative(Zone, Element)" method="getPositionWindowRelative" version="1" vugenAutoGenerated="false" domain="object" driverDomain="object" retKey="centerWinRelative" deprecated="true">
+		<commandString>Get Position for {0}:{1}</commandString>
+		<description>Get the element position relative to the window (and not the screen absolute coordinates)</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element" type="element" description="Select Element to Get Position For" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return description="the comma delimited string with the X,Y of the element coordination.">string</return>
+	</command>
+	<command name="GetTableCellText(Zone, headerElement, headerIndex, rowElement, rowIndex, width, height)" method="getTableCellText" domain="object" driverDomain="object" retKey="text">
+		<commandString>Get Table cell content {1}/{3}</commandString>
+		<description>Get text content of table cell by its header element and row element.</description>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Header Element" type="element" description="Select table header element" defaultValue="" pattern="(.+)" />
+			<parameter name="Header Index" type="integer" description="Header element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Row Element" type="element" description="Select table row element" defaultValue="" pattern="(.*)" />
+			<parameter name="Row Index" type="integer" description="Row element index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Width" type="integer" description="Width of the search" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Height" type="integer" description="Height of the search" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>string</return>
+	</command>
+	<command name="WaitForWindow(Name, Timeout)" method="waitForWindow" version="3" domain="device" driverDomain="device" includeInUI="false" retKey="found">
+		<commandString>Wait for window {0} timeout: {1} ms</commandString>
+		<description>Wait for a window</description>
+		<parameters>
+			<parameter name="Name" type="string" description="Window name" defaultValue="" pattern="(.+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+		</parameters>
+		<return>bool</return>
+	</command>
+	<command method="getAllZonesWithElement" version="3" domain="device" driverDomain="device" includeInUI="false" retKey="text">
+		<commandString>Wait for window {0} timeout: {1} ms</commandString>
+		<description>Get all the zones names that has an element with the given name.</description>
+		<parameters>
+			<parameter name="Element" type="string" description="the element name to search for" defaultValue="" pattern="(.+)" />
+		</parameters>
+		<return description="comma delimited string with the zones names">string</return>
+	</command>
+	<command name="PressWhileNotFound(Zone, ElementToClick, ElementToFind, Timeout, Delay)" method="pressWhileNotFound" version="3" includeInUI="false" domain="object" driverDomain="object" web="true" vugenAutoGenerated="false">
+		<commandString>Press on {1} while {2} is not found</commandString>
+		<description>Press on a certain element (ElementToClick) while another element (ElementToFind)is not found</description>
+		<documentation>
+			Press on a certain element (ElementToClick) while another element (ElementToFind)is not found.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to click" type="element" description="Select Element To Click" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select Element To Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before clicking on the ElementToClick (in MiliSec)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>PressWhileNotFound</doc>
+	</command>
+	<command name="PressWhileNotFound(Zone, ElementToClick, ElementToClickIndex, ElementToFind, ElementToFindIndex, Timeout, Delay)" method="pressWhileNotFound" version="2" domain="object" driverDomain="object" scriptMethod="pressWhileNotFound2" qtpMethod="PressWhileNotFound2" web="true" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Press on {1} while {3} is not found</commandString>
+		<description>Press on a certain element (ElementToClick) while another element (ElementToFind)is not found</description>
+		<documentation>
+			Press on a certain element (ElementToClick) while another element (ElementToFind)is not found.
+		</documentation>
+		<parameters>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to click" type="element" description="Select Element To Click" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to click index" type="integer" description="Element To Click Index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Element to find" type="element" description="Select Element To Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find index" type="integer" description="Element To Find Index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before clicking on the ElementToClick (in MiliSec)" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>PressWhileNotFound</doc>
+	</command>
+    <command name="ElementScrollToTableRow(tableLocator, tableIndex, rowIndex)" method="elementScrollToTableRow" scriptMethod="elementScrollToTableRow2" version="1" vugenAutoGenerated="false" domain="object" driverDomain="object" includeInUI="true" deprecated="true">
+        <commandString>Scroll to row {3} of table {0}[{1}] </commandString>
+        <description>Scroll table / list to the given row</description>
+        <parameters>
+            <parameter name="TableLocator" type="string" description="Table Locator" defaultValue="" />
+            <parameter name="TableIndex" type="integer" description="Table Locator Index" defaultValue="0" />
+            <parameter name="RowIndex" type="integer" description="Row Index" defaultValue="0" />
+        </parameters>
+        <doc>ElementScrollToTableRow</doc>
+    </command>
+	<command name="DragCoordinates(X1, Y1, X2, Y2)" method="dragCoordinates" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" deprecated="true">
+		<commandString>Drag from {0},{1} to {2},{3}</commandString>
+		<description>Drag base on coordinates</description>
+		<parameters>
+			<parameter name="X1" type="integer" description="First point X" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y1" type="integer" description="First point Y" defaultValue="0" pattern="(\d+)" />
+			<parameter name="X2" type="integer" description="Second point X" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Y2" type="integer" description="Second point Y" defaultValue="0" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command method="getAvailableAgentPort" version="3" domain="utils" driverDomain="utils" includeInUI="false" retKey="port" requireAgent="false" vugenAutoGenerated="false">
+		<description>Get an available SeeTest agent port.</description>
+		<documentation>
+			Get available Agent Port.
+			Get a port number where a SeeTest agent listens.
+		</documentation>
+		<parameters>
+		</parameters>
+		<return>int</return>
+	</command>
+	<command name="ListSelect(SendReset, SendNavigation, Delay, Text, Color, Rounds, SendOnFind)" method="listSelect" version="3" domain="device" driverDomain="device" retKey="found" manual="true">
+		<commandString>Navigate list to find {3}</commandString>
+		<description>Used to navigate lists in non touch devices</description>
+		<documentation>
+			Select an element from a list. Used for non-touch devices like blackberry.
+		</documentation>
+		<parameters>
+			<parameter name="Send Rest" type="string" description="Navigate to the list start" defaultValue="{UP}" pattern="(.+)" />
+			<parameter name="Send Navigation" type="string" description="Send to navigate in the list" defaultValue="{DOWN}" pattern="(.+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in MiliSec)" defaultValue="500" pattern="(\d+)" />
+			<parameter name="Text To Identify" type="string" description="Select text to Find" defaultValue="" pattern="(.*)" />
+			<parameter name="Color" type="string" description="Color to filter" defaultValue="" pattern="(.*)" />
+			<parameter name="Rounds" type="integer" description="Maximum navigation rounds" defaultValue="5" pattern="(\d+)" />
+			<parameter name="Send on find" type="string" description="Send on text find" defaultValue="{ENTER}" pattern="(.+)" />
+		</parameters>
+		<return description="true if element was found">bool</return>
+		<doc>ListSelect</doc>
+	</command>
+	<command name="SwipeWhileNotFound(Direction, Offset, Zone, ElementToFind, Delay, Rounds, Click)" method="swipeWhileNotFound" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" retKey="found" deprecated="true">
+		<commandString>Swipe {0} to find {3}</commandString>
+		<description>Swipe to search for an element or text</description>
+		<documentation>
+			Swipe a list to identify an element
+		</documentation>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe" defaultValue="" pattern="(.+)" />
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select Element to Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in MiliSec)" defaultValue="1000" pattern="(\d+)" />
+			<parameter name="Rounds" type="integer" description="Maximum swipe rounds" defaultValue="5" pattern="(\d+)" />
+			<parameter name="Click" type="bool" description="If TRUE then click" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>bool</return>
+	</command>
+	<command name="SwipeWhileNotFound(Direction, Offset, SwipeTime, Zone, ElementToFind, Delay, Rounds, Click)" method="swipeWhileNotFound" version="1" vugenAutoGenerated="false" domain="object" driverDomain="object"  scriptMethod="swipeWhileNotFound3" web="true" retKey="found" load="true" deprecated="true">
+		<commandString>Swipe {0} to find {4}</commandString>
+		<description>Swipe to search for an element or text</description>
+		 <documentation>
+			Swipe a list to identify an element
+		</documentation>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe" defaultValue="" pattern="(.+)" />
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="0" pattern="((\d|-)+)" />
+			<parameter name="Swipe Time" type="integer" description="Swipe operation time" defaultValue="2000" pattern="(\d+)" />
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select Element to Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in MiliSec)" defaultValue="1000" pattern="(\d+)" />
+			<parameter name="Rounds" type="integer" description="Maximum swipe rounds" defaultValue="5" pattern="(\d+)" />
+			<parameter name="Click" type="bool" description="If TRUE then click" defaultValue="true" pattern="(true|false)" />
+		</parameters>
+		<return>bool</return>
+		<doc>SwipeWhileNotFound</doc>
+	</command>
+	<command name="SwipeWhileNotFound(Direction, Offset, SwipeTime, Zone, ElementToFind, ElementToFindIndex, Delay, Rounds, Click)"
+			 appiumName="SwipeWhileNotFound(Direction, Offset, SwipeTime, ElementToFind, Delay, Rounds, Click)"
+			 appium="true" method="swipeWhileNotFound" version="2" domain="object"
+			 driverDomain="object" scriptMethod="swipeWhileNotFound2" qtpMethod="SwipeWhileNotFound2" web="true" retKey="found" manual="true" vugenAutoGenerated="omitIndex">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Swipe {0} to find {4}</commandString>
+		<appiumCommandString>Swipe {0} to find {4}</appiumCommandString>
+		<description>Swipe to search for an element or text</description>
+		 <documentation>
+			Swipe a list to identify an element
+		</documentation>
+		<parameters>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Offset" type="integer" description="Swipe offset" defaultValue="0" pattern="(\d+)" appium="true"/>
+			<parameter name="Swipe Time" type="integer" description="Swipe operation time" defaultValue="2000" pattern="(\d+)" appium="true"/>
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select Element to Find" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Element to find index" type="integer" description="Element to Find Index" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in MiliSec)" defaultValue="1000" pattern="(\d+)" appium="true"/>
+			<parameter name="Rounds" type="integer" description="Maximum swipe rounds" defaultValue="5" pattern="(\d+)" appium="true"/>
+			<parameter name="Click" type="bool" description="If TRUE then click" defaultValue="true" pattern="(true|false)" appium="true"/>
+		</parameters>
+		<return>bool</return>
+		<doc>SwipeWhileNotFound</doc>
+	</command>
+	<command name="ElementSwipeWhileNotFound(Zone, SearchElement, Direction, Offset, SwipeTime, ElementFindZone, ElementToFind, ElementToFindIndex, Delay, Rounds, Click)"
+			 method="elementSwipeWhileNotFound"
+			 version="2" domain="object" driverDomain="object" scriptMethod="elementSwipeWhileNotFound" qtpMethod="ElementSwipeWhileNotFound" web="true" retKey="found" manual="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Swipe component {2} {0} to find {6}</commandString>
+		<appiumCommandString>Swipe component {2} {0} to find {6}</appiumCommandString>
+		<description>Swipe a component to search for an element or text.</description>
+		 <documentation>
+			Swipe a component to search for an element or text.
+		</documentation>
+		<parameters>
+			<parameter name="Component Zone" type="zone" description="Zone of the container element;" defaultValue="" pattern="(.+)" />
+			<parameter name="Component Element" type="element" description="The container element;" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Direction" type="direction_no_inside" description="Direction to swipe;" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Offset" type="integer" description="Swipe offset;" defaultValue="0" pattern="(\d+)" />
+			<parameter name="Swipe Time" type="integer" description="Swipe operation time;" defaultValue="2000" pattern="(\d+)" appium="true"/>
+			<parameter name="Element find zone" type="zone" description="Select Zone of the sought element;" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select element to find from the drop-down list OR (for OCR text identification) insert text into the empty box in the drop-down list;" defaultValue="" pattern="(.+)" appium="true"/>
+			<parameter name="Element to find index" type="integer" description="The sought element's index (i.e., the number of times the element appears after the first appearance minus two). Index=0 refers to the first appearance of the element; Index=1 refers to the second appearance of the element, etc." defaultValue="0" pattern="(\d+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in milliseconds);" defaultValue="1000" pattern="(\d+)" />
+			<parameter name="Rounds" type="integer" description="Maximum swipe rounds;" defaultValue="5" pattern="(\d+)" appium="true"/>
+			<parameter name="Click" type="bool" description="Click the found element if TRUE." defaultValue="true" pattern="(true|false)" appium="true"/>
+		</parameters>
+		<return>bool</return>
+		<doc>ElementSwipeWhileNotFound</doc>
+	</command>
+	<command name="Install(appPath,sign)" method="install" version="1" vugenAutoGenerated="false" domain="device" driverDomain="device" retKey="found" deprecated="true">
+		<commandString>Install {0}</commandString>
+		<description>Install the application in the given path on the device</description>
+		<parameters>
+			<parameter name="Path" type="install" description="can be an APK/IPA etc. absolute path or an activity name from the application manager." defaultValue="" pattern="(.+)" />
+			<parameter name="Sign" type="bool" description="If set to TRUE will sign the application (if not already signed)" defaultValue="false" pattern="(true|false)" />
+		</parameters>
+		<return description="installation success">bool</return>
+		<doc>Install</doc>
+	</command>
+	<command method="PortForward" version="3" domain="device" driverDomain="device" retKey="port" includeInUI="false">
+		<description>Forward an agent port</description>
+		<parameters>
+			<parameter name="LocalPort" type="integer" description="The local port" defaultValue="" />
+			<parameter name="RemotePort" type="integer" description="The remote port" defaultValue="" />
+		</parameters>
+		<return description="the remote port assigned">int</return>
+	</command>
+	<command name="SendWhileNotFound(ToSend, Zone, ElementToFind, Timeout, Delay)" method="sendWhileNotFound" version="3" includeInUI="false" domain="object" driverDomain="object" web="true" vugenAutoGenerated="false">
+		<commandString>Send {0} while {2} is not found</commandString>
+		<description>Send a given text while an element is not found</description>
+		<parameters>
+			<parameter name="To Send" type="string" description="Insert Text To Send" defaultValue="" pattern="(.+)" />
+			<parameter name="Zone" type="zone" description="Select Zone" defaultValue="" pattern="(.+)" />
+			<parameter name="Element to find" type="element" description="Select Element to Find" defaultValue="" pattern="(.+)" />
+			<parameter name="Timeout" type="integer" description="Waiting Timeout in MiliSec" defaultValue="10000" pattern="(\d+)" />
+			<parameter name="Delay" type="integer" description="Time to wait before sending a command (in MiliSec)" defaultValue="1000" pattern="(\d+)" />
+		</parameters>
+		<return>void</return>
+		<doc>SendWhileNotFound</doc>
+	</command>
+
+	<command name="StartCall(Number, Duration)" method="startCall" version="1" vugenAutoGenerated="false" domain="utils" driverDomain="utils" deprecated="true">
+		<commandString>Skype call {2}, duration: {3}</commandString>
+		<description>Generate a phone call using Skype infrastructure</description>
+		<parameters>
+			<parameter name="Skype User" type="string" description="Skype user" defaultValue="" />
+			<parameter name="Skype Password" type="password" description="Skype password" defaultValue="" />
+			<parameter name="Number" type="string" description="Number to call include country code" defaultValue="" />
+			<parameter name="Duration" type="integer" description="Call duration (0 is infinite or until EndCall)" defaultValue="0" />
+		</parameters>
+		<return>void</return>
+	</command>
+    <command name="ElementGetTableRowsCount(tableLocator, tableIndex, visible)" method="elementGetTableRowsCount" scriptMethod="elementGetTableRowsCount2" version="1" vugenAutoGenerated="false" domain="object" retKey="count" includeInUI="true" deprecated="true">
+        <commandString>Get table rows count {0}[{1}], only visible {2}</commandString>
+        <description>Get table total or visible rows count</description>
+        <parameters>
+            <parameter name="TableLocator" type="string" description="Table Locator" defaultValue="" />
+            <parameter name="TableIndex" type="integer" description="Table Locator Index" defaultValue="0" />
+            <parameter name="Visible" type="bool" description="Only visible" defaultValue="false" />
+        </parameters>
+        <return>int</return>
+        <doc>ElementGetTableRowsCount</doc>
+    </command>
+	<command method="setSpeed" version="3" domain="utils" driverDomain="utils" includeInUI="false">
+		<parameters>
+			<parameter name="Speed" type="string" description="" defaultValue="" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command method="getDefaultTimeout" version="3" domain="utils" driverDomain="utils" includeInUI="false" retKey="timeout">
+		<description>Gets the default timeout.</description>
+		<return description="the default timeout">int</return>
+	</command>
+	<command name="Capture(Line)" appiumName="getScreenshot()" version="2" method="capture" domain="device" driverDomain="device" scriptMethod="captureLine" retKey="outFile" appium="true">
+		<!-- If you copy/paste this command, do not forget to update attribute version so that it is bigger than "2" -->
+		<commandString>Capture screen</commandString>
+		<appiumCommandString>Get Screenshot</appiumCommandString>
+		<description>Capture the current screen and add it to the report with the given line.</description>
+		<parameters>
+			<parameter name="Line" type="string" description="the line to be used in the report" defaultValue="Capture" pattern="(.+)" />
+		</parameters>
+		<return description="the path of the captured image file.">string</return>
+	</command>
+
+	<command name="GetCurrentApplicationName()" method="getCurrentApplicationName" version="3" domain="device" includeInUI="true" driverDomain="device" retKey="text">
+        <commandString>Get current application name</commandString>
+        <description>Get the name of application that is running in the foreground of the device</description>
+        <parameters>
+        </parameters>
+        <return>string</return>
+    </command>
+	<command name="ConfigureAPKSigningKeystore(KeystorePath, KeystorePassword, Alias, KeyPassword)" method="configureAPKSigningKeystore" version="3" domain="object" driverDomain="object" web="true" load="true" manual="false">
+		<commandString>Set keystore to .. </commandString>
+		<description> Configure keystore to sign Android applications </description>
+		<documentation>
+			Configure a customized keystore to sign Android applications
+		</documentation>
+		<parameters>
+			<parameter name="KeystorePath" type="string" description="Keystore file location on disk" defaultValue="" pattern="(.*)" />
+			<parameter name="KeystorePassword" type="string" description="Keystore password" defaultValue="" pattern="(.*)" />
+			<parameter name="Alias" type="string" description="Alias" defaultValue="" pattern="(.*)" />
+			<parameter name="KeyPassword" type="string" description="Store password" defaultValue="" pattern="(.*)" />
+		</parameters>
+		<return>void</return>
+	</command>
+	<command name="LayoutTest" version="2" method="runLayoutTest" domain="device" driverDomain="device" scriptMethod="LayoutTest" retKey="text" includeInUI="true">
+		<commandString>LayoutTest {0}</commandString>
+		<description>Run a layout test</description>
+		<parameters>
+			<parameter name="xml" type="layout" description="the xml of the layout tests" defaultValue="" pattern="(.+)" />
+        </parameters>
+		<return>string</return>
+	</command>
+
+	<command name="SetContext(context)" method="setContext" version="3" domain="device" driverDomain="device" web="false" load="false" manual="false" appium="only" appiumName="SetContext(context)">
+		<commandString>Set Context {0}</commandString>
+		<appiumCommandString>Set Context {0}</appiumCommandString>
+		<description>Set the current context</description>
+		<documentation>
+			Set the current context
+		</documentation>
+		<parameters>
+			<parameter name="Context" type="context" description="Context" defaultValue="NATIVE_APP" pattern="(.+)" appium="true"/>
+		</parameters>
+		<return>void</return>
+		<doc>SetContext</doc>
+	</command>
+</commands>

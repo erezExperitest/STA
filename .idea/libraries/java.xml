@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES>
+      <root url="file://D:/Program Files (x86)/Experitest/SeeTest-10.6.3/clients/java" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/Program Files (x86)/Experitest/SeeTest-10.6.3/clients/java" />
+    </SOURCES>
+    <jarDirectory url="file://D:/Program Files (x86)/Experitest/SeeTest-10.6.3/clients/java" recursive="false" />
+    <jarDirectory url="file://D:/Program Files (x86)/Experitest/SeeTest-10.6.3/clients/java" recursive="false" type="SOURCES" />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/STA104/STA104.iml" filepath="$PROJECT_DIR$/STA104/STA104.iml" />
+      <module fileurl="file://$PROJECT_DIR$/STA106/STA106.iml" filepath="$PROJECT_DIR$/STA106/STA106.iml" />
+      <module fileurl="file://$PROJECT_DIR$/STA107/STA107.iml" filepath="$PROJECT_DIR$/STA107/STA107.iml" />
+      <module fileurl="file://$PROJECT_DIR$/STAold/STAold.iml" filepath="$PROJECT_DIR$/STAold/STAold.iml" />
+    </modules>
+  </component>
+</project>
