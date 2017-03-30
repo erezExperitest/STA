@@ -16,57 +16,61 @@ public class GridLongRunIOS {
     @Test
     public void GridLongRun(){
         GridClient grid = new GridClient("admin", "Experitest2012", "", "http://localhost"); //(user name, password, project,ip,port,secured)
-        client = grid.lockDeviceForExecution("erezTest", "@os='ios'", 10, 3000000); //(test name, query, time for reserve in minuets, timeout in milliseconds)
+        client = grid.lockDeviceForExecution("erezTest", "@serialnumber='cbc20b1088c65f4a27dca70b158843f69f249a64'", 10, 3000000); //(test name, query, time for reserve in minuets, timeout in milliseconds)
+//        client = grid.lockDeviceForExecution("erezTest", "@os='ios'", 10, 3000000); //(test name, query, time for reserve in minuets, timeout in milliseconds)
         client.setProjectBaseDirectory(projectBaseDirectory);
         client.setReporter("xml", "reports", "1");
 
-        client.launch("com.experitest.ExperiBank", true, true);
-        client.click("NATIVE", "placeholder=Username", 0, 1);
-        client.waitForElement("NATIVE", "placeholder=Username", 0, 30000);
-        client.elementSendText("NATIVE", "placeholder=Username", 0, "company");
-        client.elementSendText("NATIVE", "placeholder=Password", 0, "company");
-        client.click("NATIVE", "accessibilityLabel=loginButton", 0, 1);
-        client.click("NATIVE", "accessibilityLabel=makePaymentButton", 0, 1);
-        client.elementSendText("NATIVE", "placeholder=Phone", 0, "654654");
-        client.elementSendText("NATIVE", "placeholder=Name", 0, "aerertytr");
-        client.elementSendText("NATIVE", "placeholder=Amount", 0, "1");
-        client.click("NATIVE", "placeholder=Country", 0, 1);
-        client.click("NATIVE", "accessibilityLabel=countryButton", 0, 1);
-        client.elementListSelect("", "text=Tanzania", 0, false);
-        client.click("NATIVE", "xpath=//*[@accessibilityLabel='Tanzania']", 0, 1);
-        client.click("NATIVE", "accessibilityLabel=sendPaymentButton", 0, 1);
-        client.click("NATIVE", "xpath=//*[@text='Yes']", 0, 1);
-        client.click("NATIVE", "accessibilityLabel=makePaymentButton", 0, 1);
-        client.click("NATIVE", "accessibilityLabel=cancelButton", 0, 1);
-        client.click("NATIVE", "accessibilityLabel=logoutButton", 0, 1);
-        client.launch("safari:http://google.com", true, false);
-        client.click("WEB", "id=lst-ib", 0, 1);
-        client.elementSendText("WEB", "id=lst-ib", 0, "experitest");
-        client.sendText("{ENTER}");
-        client.click("WEB", "text=Images", 0, 1);
-        client.click("WEB", "name=1tqX0q1YsulfuM:", 0, 1);
+//        client.launch("com.experitest.ExperiBank", true, true);
+//        client.click("NATIVE", "placeholder=Username", 0, 1);
+//        client.waitForElement("NATIVE", "placeholder=Username", 0, 30000);
+//        client.elementSendText("NATIVE", "placeholder=Username", 0, "company");
+//        client.elementSendText("NATIVE", "placeholder=Password", 0, "company");
+//        client.click("NATIVE", "accessibilityLabel=loginButton", 0, 1);
+//        client.click("NATIVE", "accessibilityLabel=makePaymentButton", 0, 1);
+//        client.elementSendText("NATIVE", "placeholder=Phone", 0, "654654");
+//        client.elementSendText("NATIVE", "placeholder=Name", 0, "aerertytr");
+//        client.elementSendText("NATIVE", "placeholder=Amount", 0, "1");
+//        client.click("NATIVE", "placeholder=Country", 0, 1);
+//        client.click("NATIVE", "accessibilityLabel=countryButton", 0, 1);
+//        client.elementListSelect("", "text=Tanzania", 0, false);
+//        client.click("NATIVE", "xpath=/*//*[@accessibilityLabel='Tanzania']", 0, 1);
+//        client.click("NATIVE", "accessibilityLabel=sendPaymentButton", 0, 1);
+//        client.click("NATIVE", "xpath=/*//*[@text='Yes']", 0, 1);
+//        client.click("NATIVE", "accessibilityLabel=makePaymentButton", 0, 1);
+//        client.click("NATIVE", "accessibilityLabel=cancelButton", 0, 1);
+//        client.click("NATIVE", "accessibilityLabel=logoutButton", 0, 1);
+//        client.launch("safari:http://google.com", true, false);
+//        client.click("WEB", "id=lst-ib", 0, 1);
+//        client.elementSendText("WEB", "id=lst-ib", 0, "experitest");
+//        client.sendText("{ENTER}");
+//        client.click("WEB", "text=Images", 0, 1);
+//        client.click("WEB", "name=1tqX0q1YsulfuM:", 0, 1);
         client.waitForElement("NATIVE", "xpath=//*[@text='Address']", 0, 10000);
-        client.elementSendText("NATIVE", "xpath=//*[@text='Address']", 0, "google.co.il");
+        client.click("native","xpath=//*[@text='Address']",0,1);
+        client.elementSendText("NATIVE", "xpath=//[@text='Address']", 0, "google.co.il");
         client.sendText("{ENTER}");
-        client.elementSendText("NATIVE", "xpath=//*[@text='Address']", 0, "wikipedia.com");
-        client.sendText("{ENTER}");
-        client.elementSendText("WEB", "id=searchInput", 0, "pele");
-        client.waitForElement("WEB", "text=Brazilian footballer", 0, 30000);
-        client.click("WEB", "text=Brazilian footballer", 0, 1);
-        client.waitForElement("WEB", "id=searchIcon", 0, 10000);
-        client.click("WEB", "id=searchIcon", 0, 1);
+//        client.elementSendText("NATIVE", "xpath=//*[@text='Address']", 0, "wikipedia.com");
+//        client.sendText("{ENTER}");
+//        client.elementSendText("WEB", "id=searchInput", 0, "pele");
+//        client.sendText("{ENTER}");
+//        client.waitForElement("WEB", "text=Brazilian footballer", 0, 30000);
+//        client.click("WEB", "text=Brazilian footballer", 0, 1);
+//        client.waitForElement("WEB", "id=searchIcon", 0, 10000);
+//        client.click("WEB", "id=searchIcon", 0, 1);
         client.waitForElement("WEB", "name=search", 0, 10000);
         client.click("WEB", "name=search", 0, 1);
         client.elementSendText("WEB", "name=search", 0, "expert");
         client.sendText("{ENTER}");
         client.click("WEB", "id=searchInput", 0, 1);
         client.waitForElement("WEB", "name=search", 0, 30000);
-        client.click("WEB", "name=search", 0, 1);
+//        client.click("WEB", "name=search", 0, 1);
         client.waitForElement("WEB", "text=Close", 0, 10000);
         client.click("WEB", "text=Close", 0, 1);
         client.elementSendText("WEB", "id=searchInput", 0, "jerusalem");
-        client.waitForElement("WEB", "text=Jerusalemancient holy city in the Judean Mountains", 0, 30000);
-        client.click("WEB", "text=Jerusalemancient holy city in the Judean Mountains", 0, 1);
+        client.sendText("{ENTER}");
+//        client.waitForElement("WEB", "text=Jerusalemancient holy city in the Judean Mountains", 0, 30000);
+//        client.click("WEB", "text=Jerusalemancient holy city in the Judean Mountains", 0, 1);
         client.waitForElement("WEB", "text=Kingdom of Judah", 0, 60000);
         client.click("WEB", "text=Kingdom of Judah", 0, 1);
 }
