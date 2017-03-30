@@ -45,10 +45,10 @@ public class GridLongRunIOS {
         client.sendText("{ENTER}");
         client.click("WEB", "text=Images", 0, 1);
         client.click("WEB", "name=1tqX0q1YsulfuM:", 0, 1);
-        client.waitForElement("NATIVE", "xpath=//*[@class='UIAWebView']", 0, 10000);
-        client.elementSendText("NATIVE", "xpath=//*[@class='UIAWebView']", 0, "google.co.il");
+        client.waitForElement("NATIVE", "xpath=//*[@text='Address']", 0, 10000);
+        client.elementSendText("NATIVE", "xpath=//*[@text='Address']", 0, "google.co.il");
         client.sendText("{ENTER}");
-        client.elementSendText("NATIVE", "xpath=//*[@class='UIAWebView']", 0, "wikipedia.com");
+        client.elementSendText("NATIVE", "xpath=//*[@text='Address']", 0, "wikipedia.com");
         client.sendText("{ENTER}");
         client.elementSendText("WEB", "id=searchInput", 0, "pele");
         client.waitForElement("WEB", "text=Brazilian footballer", 0, 30000);
